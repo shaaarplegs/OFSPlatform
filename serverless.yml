@@ -8,13 +8,13 @@ provider:
   region: eu-west-1
 
 functions:
-  hello:
+  retrieveService:
     handler: src/aws-ofs-manager-microservice/src/handlers/retrieveService.handler
     events:
      - httpApi:
          path: /services
          method: get
-  createAuction:
+  createService:
     handler: src/aws-ofs-manager-microservice/src/handlers/createService.handler
     events:
      - httpApi:
