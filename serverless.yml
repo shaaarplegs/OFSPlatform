@@ -9,13 +9,13 @@ provider:
 
 functions:
   hello:
-    handler: src/handlers/retrieveService.handler
+    handler: src/aws-ofs-manager-microservice/src/handlers/retrieveService.handler
     events:
      - httpApi:
          path: /services
          method: get
   createAuction:
-    handler: src/handlers/createService.handler
+    handler: src/aws-ofs-manager-microservice/src/handlers/createService.handler
     events:
      - httpApi:
          path: /services
