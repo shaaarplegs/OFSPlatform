@@ -1,0 +1,22 @@
+service: aws-ofs-manager-microservice
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: eu-west-1
+
+functions:
+  hello:
+    handler: src/handlers/retrieveService.handler
+    events:
+     - httpApi:
+         path: /services
+         method: get
+  createAuction:
+    handler: src/handlers/createService.handler
+    events:
+     - httpApi:
+         path: /services
+         method: post
