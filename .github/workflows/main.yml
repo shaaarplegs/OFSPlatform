@@ -1,4 +1,4 @@
-name: Deploy master branch
+name: OFS-PLATFORM Deployment to AWS
 
 on:
   push:
@@ -40,9 +40,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-  AWS_Serverless_deployment:
-    needs: [Deployment_Verticals,Deployment_FS]
-    name: serverless deploy
+    - name: serverless deploy
     uses: serverless/github-action@v3.1
     with:
       args: deploy
