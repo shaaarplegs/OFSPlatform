@@ -42,8 +42,11 @@ jobs:
     - run: npm ci
   Deployment_Serverless_AWS:
     needs: [Deployment_Verticals,Deployment_FS]
-    name: deploying the stack to AWS via serverless framework
+    name: serverless deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/aws-ofs-freelancing-microservice
     strategy:
       matrix:
         node-version: [16.x]
@@ -53,3 +56,5 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+
