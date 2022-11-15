@@ -2,7 +2,7 @@
   "name": "aws-ofs-verticals-microservice",
   "type": "module",
   "version": "1.0.0",
-  "description": "Codingly template for Serverless Framework projects",
+  "description": "verticals service",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -15,6 +15,7 @@
     "webpack": "^4.35.2"
   },
   "dependencies": {
-    "aws-sdk": "^2.639.0"
+    "aws-sdk": "^2.639.0",
+    "uuid": "^9.0.0"
   }
 }

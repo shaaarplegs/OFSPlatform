@@ -1,0 +1,9 @@
+# package directories
+src/aws-ofs-verticals-microservice/node_modules
+src/aws-ofs-verticals-microservice/jspm_packages
+
+# Serverless directories
+.serverless
+
+# Webpack directories
+src/aws-ofs-verticals-microservice/.webpack

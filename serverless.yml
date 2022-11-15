@@ -7,7 +7,7 @@ provider:
   stage: dev
   region: eu-west-1
   environment:
-    AUCTIONS_TABLE_NAME: ${self:custom.VerticalsTable.name}
+    VERTICALS_TABLE_NAME: ${self:custom.VerticalsTable.name}
   iamRoleStatements:
     - ${file(src/aws-ofs-verticals-microservice/IAM/VerticalsTableIAM.yaml):VerticalsTableIAM}
 
@@ -35,8 +35,17 @@ functions:
 
 resources:
   Resources:
-    VerticalsTable: ${file(src/aws-ofs-verticals-microservice/resources/VerticalsTable.yml):VerticalsTable}
-
+    VerticalsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: VerticalsTable-${self:provider.stage}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
 
 custom:
   VerticalsTable:
