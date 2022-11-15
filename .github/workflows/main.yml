@@ -44,6 +44,9 @@ jobs:
     needs: [Deployment_Verticals,Deployment_FS]
     name: serverless deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/aws-ofs-freelancing-microservice
     strategy:
       matrix:
         node-version: [16.x]
