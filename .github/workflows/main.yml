@@ -24,20 +24,20 @@ jobs:
     - run: npm ci
 
     - name: freelancing microservice deployment
-        runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: src/aws-ofs-verticals-microservice
-        strategy:
-          matrix:
-            node-version: [16.x]
-        steps:
-        - uses: actions/checkout@v3
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v3
-          with:
-            node-version: ${{ matrix.node-version }}
-        - run: npm ci
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: src/aws-ofs-verticals-microservice
+      strategy:
+        matrix:
+          node-version: [16.x]
+      steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
 
     - name: serverless deploy
       uses: serverless/github-action@v3.1
