@@ -13,6 +13,8 @@ async function createVertical(event, context) {
         name:name,
     }
 
+    dynamodb.putItem(newVertical)
+
     return {
       statusCode: 201,
       body: JSON.stringify({ newVertical }),
