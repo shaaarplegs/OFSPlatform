@@ -13,7 +13,11 @@ async function createVertical(event, context) {
         name:name,
     }
 
-    dynamodb.putItem(newVertical)
+    await dynamodb.put({
+      TableName: process.env.VERTICALS_TABLE_NAME,
+      Item: newVertical
+    }).promise();
+
 
     return {
       statusCode: 201,
