@@ -1,4 +1,4 @@
-name: OFS-PLATFORM Deployment to AWS
+name: Deploy master branch
 
 on:
   push:
