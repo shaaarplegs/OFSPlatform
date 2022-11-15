@@ -43,6 +43,10 @@ jobs:
   Deployment_Serverless_AWS:
     needs: [Deployment_Verticals,Deployment_FS]
     name: serverless deploy
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
     - uses: serverless/github-action@v3.1
       with:
