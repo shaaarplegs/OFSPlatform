@@ -1,5 +1,5 @@
 {
-  "name": "aws-ofs-manager-microservice",
+  "name": "aws-ofs-verticals-microservice",
   "type": "module",
   "version": "1.0.0",
   "description": "Codingly template for Serverless Framework projects",

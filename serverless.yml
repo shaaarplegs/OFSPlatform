@@ -1,4 +1,4 @@
-service: aws-ofs-manager-microservice
+service: aws-ofs
 frameworkVersion: '3'
 
 provider:
@@ -6,17 +6,39 @@ provider:
   runtime: nodejs16.x
   stage: dev
   region: eu-west-1
+  environment:
+    AUCTIONS_TABLE_NAME: ${self:custom.AuctionsTable.name}
+  iamRoleStatements:
+    - ${file(src/aws-ofs-verticals-microservice/IAM/VerticalsTableIAM.yaml):VerticalsTableIAM}
+
 
 functions:
   retrieveService:
-    handler: src/aws-ofs-manager-microservice/src/handlers/retrieveService.handler
+    handler: src/aws-ofs-verticals-microservice/src/handlers/retrieveVertical.handler
     events:
      - httpApi:
-         path: /services
+         path: /vertical
          method: get
-  createService:
-    handler: src/aws-ofs-manager-microservice/src/handlers/createService.handler
+  createVertical:
+    handler: src/aws-ofs-verticals-microservice/src/handlers/createVertical.handler
     events:
      - httpApi:
-         path: /services
+         path: /vertical
          method: post
+  getVerticalByID:
+    handler: src/aws-ofs-verticals-microservice/src/handlers/getVerticalByID.handler
+    events:
+     - httpApi:
+         path: /vertical/{id}
+         method: getW
+
+
+resources:
+  Resources:
+    VerticalsTable: ${file(src/aws-ofs-verticals-microservice/resources/VerticalsTable.yml):VerticalsTable}
+
+
+custom:
+  VerticalsTable:
+    name: !Ref VerticalsTable
+    arn: !GetAtt VerticalsTable.Arn
