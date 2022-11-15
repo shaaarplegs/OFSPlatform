@@ -7,7 +7,7 @@ provider:
   stage: dev
   region: eu-west-1
   environment:
-    AUCTIONS_TABLE_NAME: ${self:custom.AuctionsTable.name}
+    AUCTIONS_TABLE_NAME: ${self:custom.VerticalsTable.name}
   iamRoleStatements:
     - ${file(src/aws-ofs-verticals-microservice/IAM/VerticalsTableIAM.yaml):VerticalsTableIAM}
 
@@ -30,7 +30,7 @@ functions:
     events:
      - httpApi:
          path: /vertical/{id}
-         method: getW
+         method: get
 
 
 resources:
