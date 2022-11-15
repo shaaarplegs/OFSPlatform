@@ -2,8 +2,13 @@
 src/aws-ofs-verticals-microservice/node_modules
 src/aws-ofs-verticals-microservice/jspm_packages
 
+src/aws-ofs-freelancing-microservice/node_modules
+src/aws-ofs-freelancing-microservice/jspm_packages
+
+
 # Serverless directories
 .serverless
 
 # Webpack directories
 src/aws-ofs-verticals-microservice/.webpack
+src/aws-ofs-freelancing-microservice/.webpack

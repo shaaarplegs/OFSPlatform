@@ -8,28 +8,52 @@ provider:
   region: eu-west-1
   environment:
     VERTICALS_TABLE_NAME: ${self:custom.VerticalsTable.name}
+    FS_TABLE_NAME: ${self:custom.FSTable.name}
   iamRoleStatements:
     - ${file(src/aws-ofs-verticals-microservice/IAM/VerticalsTableIAM.yaml):VerticalsTableIAM}
+    - ${file(src/aws-ofs-freelancing-microservice/IAM/FSTableIAM.yaml):FSTableIAM}
 
 
 functions:
-  retrieveService:
+  retrieveVertical:
     handler: src/aws-ofs-verticals-microservice/src/handlers/retrieveVertical.handler
     events:
      - httpApi:
          path: /vertical
          method: get
+  retrieveFS:
+    handler: src/aws-ofs-freelancing-microservice/src/handlers/retrieveFS.handler
+    events:
+     - httpApi:
+         path: /fs
+         method: get
+
   createVertical:
     handler: src/aws-ofs-verticals-microservice/src/handlers/createVertical.handler
     events:
      - httpApi:
          path: /vertical
          method: post
+
+  createFS:
+    handler: src/aws-ofs-freelancing-microservice/src/handlers/createFS.handler
+    events:
+     - httpApi:
+         path: /fs
+         method: post
+      
   getVerticalByID:
     handler: src/aws-ofs-verticals-microservice/src/handlers/getVerticalByID.handler
     events:
      - httpApi:
          path: /vertical/{id}
+         method: get
+
+  getFSbyID:
+    handler: src/aws-ofs-freelancing-microservice/src/handlers/getFSbyID.handler
+    events:
+     - httpApi:
+         path: /fs/{id}
          method: get
 
 
@@ -46,8 +70,22 @@ resources:
         KeySchema:
           - AttributeName: id
             KeyType: HASH
+    FSTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: FSTable-${self:provider.stage}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
 
 custom:
   VerticalsTable:
     name: !Ref VerticalsTable
     arn: !GetAtt VerticalsTable.Arn
+  FSTable:
+    name: !Ref FSTable
+    arn: !GetAtt FSTable.Arn

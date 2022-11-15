@@ -1,0 +1,6 @@
+FSTableIAM:
+  Effect: Allow
+  Action:
+    - dynamodb:*
+  Resource:
+    - ${self:custom.FSTable.arn}
