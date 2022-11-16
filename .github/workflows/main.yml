@@ -24,13 +24,11 @@ jobs:
     - run: npm ci
     - run: cat serverless.yml
     - uses: serverless/github-action@v3.1
-      with: 
-        args: deploy
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         SLS_INTERACTIVE_SETUP_ENABLE: 1
-    - run: serverless deploy
+    - run: deploy
 
   # Build_Freelancing_Microservice:
   #   needs: Build_Verticals_Microservice
