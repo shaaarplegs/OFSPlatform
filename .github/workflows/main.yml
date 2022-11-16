@@ -9,13 +9,13 @@ jobs:
   Build_Verticals_Microservice:
     name: verticals microservice deployment
     runs-on: ubuntu-latest
-    working-directory: src/aws-ofs-verticals-microservice
     strategy:
       matrix:
         node-version: [16.x]
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
+      working-directory: src/aws-ofs-verticals-microservice
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
@@ -32,13 +32,13 @@ jobs:
     needs: Build_Verticals_Microservice
     name: freelancing microservice deployment
     runs-on: ubuntu-latest
-    working-directory: src/aws-ofs-freelancing-microservice
     strategy:
       matrix:
         node-version: [16.x]
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
+      working-directory: src/aws-ofs-freelancing-microservice
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
