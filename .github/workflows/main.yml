@@ -9,9 +9,7 @@ jobs:
   Build_Verticals_Microservice:
     name: verticals microservice deployment
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src/aws-ofs-verticals-microservice
+    working-directory: src/aws-ofs-verticals-microservice
     strategy:
       matrix:
         node-version: [16.x]
@@ -23,8 +21,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - uses: serverless/github-action@v3.1
-    - run: cd src
-    - run: cd aws-ofs-verticals-microservice
       with:
         args: deploy
       env:
@@ -36,9 +32,7 @@ jobs:
     needs: Build_Verticals_Microservice
     name: freelancing microservice deployment
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src/aws-ofs-freelancing-microservice
+    working-directory: src/aws-ofs-freelancing-microservice
     strategy:
       matrix:
         node-version: [16.x]
@@ -50,8 +44,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - uses: serverless/github-action@v3.1
-    - run: cd src
-    - run: cd aws-ofs-freelancing-microservice
       with:
         args: deploy
       env:
