@@ -1,0 +1,55 @@
+service: aws-ofs-freelancing-microservice
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: eu-west-1
+  environment:
+    FS_TABLE_NAME: ${self:custom.FSTable.name}
+  iamRoleStatements:
+    - ${file(IAM/FSTableIAM.yaml):FSTableIAM}
+
+
+functions:
+  retrieveFS:
+    handler: src/handlers/retrieveFS.handler
+    events:
+     - httpApi:
+         path: /fs
+         method: get
+
+  createFS:
+    handler: src/handlers/createFS.handler
+    events:
+     - httpApi:
+         path: /fs
+         method: post
+
+  getFSbyID:
+    handler: src/handlers/getFSbyID.handler
+    events:
+     - httpApi:
+         path: /fs/{id}
+         method: get
+
+
+resources:
+  Resources:
+    FSTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: FSTable-${self:provider.stage}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+
+custom:
+  FSTable:
+    name: !Ref FSTable
+    arn: !GetAtt FSTable.Arn

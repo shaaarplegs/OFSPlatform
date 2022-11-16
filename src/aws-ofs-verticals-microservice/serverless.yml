@@ -1,0 +1,55 @@
+service: aws-ofs-verticals-microservice
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: eu-west-1
+  environment:
+    VERTICALS_TABLE_NAME: ${self:custom.VerticalsTable.name}
+  iamRoleStatements:
+    - ${file(IAM/VerticalsTableIAM.yaml):VerticalsTableIAM}
+
+
+functions:
+  retrieveVertical:
+    handler: src/handlers/retrieveVertical.handler
+    events:
+     - httpApi:
+         path: /vertical
+         method: get
+
+  createVertical:
+    handler: src/handlers/createVertical.handler
+    events:
+     - httpApi:
+         path: /vertical
+         method: post
+      
+  getVerticalByID:
+    handler: src/handlers/getVerticalByID.handler
+    events:
+     - httpApi:
+         path: /vertical/{id}
+         method: get
+
+
+resources:
+  Resources:
+    VerticalsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: VerticalsTable-${self:provider.stage}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+
+custom:
+  VerticalsTable:
+    name: !Ref VerticalsTable
+    arn: !GetAtt VerticalsTable.Arn
