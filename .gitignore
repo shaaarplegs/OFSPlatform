@@ -12,3 +12,5 @@ src/aws-ofs-freelancing-microservice/jspm_packages
 # Webpack directories
 src/aws-ofs-verticals-microservice/.webpack
 src/aws-ofs-freelancing-microservice/.webpack
+
+IAMCred.txt
