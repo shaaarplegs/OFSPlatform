@@ -1,6 +1,7 @@
 import { v4 as uuid} from 'uuid';
 import AWS from 'aws-sdk';
 const dynamodb = new AWS.DynamoDB.DocumentClient();
+const eventbridge = new AWS.EventBridge()
 
 async function createFS(event, context, callback) {
 
@@ -9,7 +10,7 @@ async function createFS(event, context, callback) {
   const {city} = JSON.parse(event.body)
   const {description} = JSON.parse(event.body)
   const {price} = JSON.parse(event.body)
-  const {available} = JSON.parse(event.body)
+  const {scheduledTime} = JSON.parse(event.body)
 
   const now = new Date();
 
@@ -20,14 +21,32 @@ async function createFS(event, context, callback) {
       name,
       city,
       description,
-      price,
-      available
+      price
   }
 
   await dynamodb.put({
     TableName: process.env.FS_TABLE_NAME,
     Item: newFS
   }).promise();
+
+
+  const params = {
+    Entries: [ 
+      {
+        Detail: JSON.stringify({
+          fs_id:newFS.id,
+          scheduledTime:scheduledTime
+        }),
+        EventBusName: 'aws-ofs-eventBus',
+        DetailType: 'create',
+        Source: 'vertical.createFS',
+        Time: new Date()
+      }
+    ]
+  }
+  const result = await eventbridge.putEvents(params).promise()
+  console.log(result)
+
   
   return {
     statusCode: 201,
@@ -37,4 +56,4 @@ async function createFS(event, context, callback) {
 
 }
   
-  export const handler = createFS;
+export const handler = createFS;

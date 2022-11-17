@@ -1,0 +1,24 @@
+import AWS from 'aws-sdk';
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+import { v4 as uuid} from 'uuid';
+
+
+export const putToDynamoDB = async(item) => {
+    await dynamodb.put({
+        TableName: process.env.VERTICALS_TABLE_NAME,
+        Item: item
+    }).promise();
+}
+
+
+export const createVerticalObject = (props) => {
+    const now = new Date();
+    const jsonObject = {
+        id:uuid(),
+        createdAt:now.toISOString(),
+        name:props.name
+    }
+    return jsonObject;
+}  
+
+

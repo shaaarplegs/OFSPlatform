@@ -16,9 +16,11 @@ functions:
   createStatus:
     handler: src/handlers/createStatus.handler
     events:
-     - httpApi:
-         path: /status
-         method: post
+     - eventBridge:
+         eventBus: 'aws-ofs-eventBus'
+         pattern:
+           source:
+             - vertical.createFS
 
   getStatusbyFreelancingServiceID:
     handler: src/handlers/getStatusbyFreelancingServiceID.handler
@@ -41,6 +43,9 @@ resources:
         KeySchema:
           - AttributeName: fs_id
             KeyType: HASH
+
+
+
 
 custom:
   StatusTable:

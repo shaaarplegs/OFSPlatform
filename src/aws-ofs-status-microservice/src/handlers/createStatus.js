@@ -1,21 +1,9 @@
-import AWS from 'aws-sdk';
-const dynamodb = new AWS.DynamoDB.DocumentClient();
+import { createStatusObject, putToDynamoDB } from './Status.js';
 
-async function createStatus(event, context, callback) {
-  const {fs_id} = JSON.parse(event.body)
-  const {scheduledTime} = JSON.parse(event.body)
-  const now = new Date();
-
-  const StatusObj = {
-      fs_id,
-      createdAt: now.toISOString(),
-      scheduledTime,
-  }
-
-  await dynamodb.put({
-    TableName: process.env.STATUS_TABLE_NAME,
-    Item: StatusObj
-  }).promise();
+async function createStatus(event) {
+  
+  const StatusObj = createStatusObject({fs_id:event.detail.fs_id,scheduledTime:event.detail.scheduledTime})
+  putToDynamoDB(StatusObj);
   
   return {
     statusCode: 201,

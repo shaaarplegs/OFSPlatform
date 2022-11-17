@@ -2,5 +2,6 @@ FSTableIAM:
   Effect: Allow
   Action:
     - dynamodb:*
+    - events:*
   Resource:
     - "*"
