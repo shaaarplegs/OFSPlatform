@@ -2,5 +2,5 @@ VerticalsTableIAM:
   Effect: Allow
   Action:
     - dynamodb:*
-  Resource:
-    - ${self:custom.VerticalsTable.arn}
+  Resource: 
+    - "*"

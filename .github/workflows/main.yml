@@ -54,3 +54,26 @@ jobs:
     - name: Deploy verticals microservice to AWS
       run: serverless deploy
 
+  Build_Status_Microservice:
+    needs: [Build_Verticals_Microservice,Build_Verticals_Microservice]
+    name: freelancing status microservice deployment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/aws-ofs-status-microservice
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Install Serverless Framework
+      run: npm install -g serverless
+    - name: Serverless AWS authentication
+      run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Deploy verticals microservice to AWS
+      run: serverless deploy

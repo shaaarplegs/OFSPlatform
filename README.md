@@ -61,5 +61,3 @@ they seem to include countries across the world. My guts tells me that would not
 3.	Sees a dashboard containing statistics about freelancers, service seekers and services.
 4.	Can add, remove, edit and add a category of a service
 5.	Can register an admin account
-
-

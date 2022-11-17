@@ -1,16 +1,13 @@
 # package directories
 src/aws-ofs-verticals-microservice/node_modules
-src/aws-ofs-verticals-microservice/jspm_packages
-
 src/aws-ofs-freelancing-microservice/node_modules
-src/aws-ofs-freelancing-microservice/jspm_packages
-
+src/aws-ofs-status-microservice/node_modules
 
 # Serverless directories
 .serverless
+src/aws-ofs-verticals-microservice/.serverless
+src/aws-ofs-freelancing-microservice/.serverless
+src/aws-ofs-status-microservice/.serverless
 
-# Webpack directories
-src/aws-ofs-verticals-microservice/.webpack
-src/aws-ofs-freelancing-microservice/.webpack
 
 IAMCred.txt

@@ -1,0 +1,48 @@
+service: aws-ofs-status-microservice
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: eu-west-1
+  environment:
+    STATUS_TABLE_NAME: ${self:custom.StatusTable.name}
+  iamRoleStatements:
+    - ${file(IAM/StatusTableIAM.yaml):StatusTableIAM}
+
+
+functions:
+  createStatus:
+    handler: src/handlers/createStatus.handler
+    events:
+     - httpApi:
+         path: /status
+         method: post
+
+  getStatusbyFreelancingServiceID:
+    handler: src/handlers/getStatusbyFreelancingServiceID.handler
+    events:
+     - httpApi:
+         path: /status/{fs_id}
+         method: get
+
+
+resources:
+  Resources:
+    StatusTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: StatusTable-${self:provider.stage}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: fs_id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: fs_id
+            KeyType: HASH
+
+custom:
+  StatusTable:
+    name: !Ref StatusTable
+    arn: !GetAtt StatusTable.Arn

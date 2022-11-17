@@ -1,4 +1,4 @@
-FSTableIAM:
+StatusTableIAM:
   Effect: Allow
   Action:
     - dynamodb:*
