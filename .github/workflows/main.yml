@@ -55,7 +55,7 @@ jobs:
       run: serverless deploy
 
   Build_Status_Microservice:
-    needs: [Build_Verticals_Microservice,Build_Verticals_Microservice]
+    needs: [Build_Verticals_Microservice,Build_Freelancing_Microservice]
     name: freelancing status microservice deployment
     runs-on: ubuntu-latest
     defaults:
