@@ -1,7 +1,8 @@
 {
   "type": "module",
   "dependencies": {
-    "aws-sdk": "^2.1256.0"
+    "aws-sdk": "^2.1256.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "jest": "^29.3.1"

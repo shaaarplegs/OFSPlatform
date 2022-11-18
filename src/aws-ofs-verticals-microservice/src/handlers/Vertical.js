@@ -3,11 +3,11 @@ const dynamodb = new AWS.DynamoDB.DocumentClient();
 import { v4 as uuid} from 'uuid';
 
 
-export const putToDynamoDB = async(item) => {
-    await dynamodb.put({
+export const putToDynamoDB = (item) => {
+    return dynamodb.put({
         TableName: process.env.VERTICALS_TABLE_NAME,
         Item: item
-    }).promise();
+    });
 }
 
 

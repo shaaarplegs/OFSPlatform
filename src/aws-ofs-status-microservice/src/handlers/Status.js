@@ -3,14 +3,12 @@ import { v4 as uuid} from 'uuid';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-
-export const putToDynamoDB = async(item) => {
-    await dynamodb.put({
+export const putToDynamoDB = (item) => {
+    return dynamodb.put({
         TableName: process.env.STATUS_TABLE_NAME,
         Item: item
-    }).promise();
+    });
 }
-
 
 export const createStatusObject = (props) => {
     const now = new Date();
