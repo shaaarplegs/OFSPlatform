@@ -17,4 +17,4 @@ async function getFSbyID(event, context) {
     };
 }
   
-  export const handler = getFSbyID
+export const handler = getFSbyID

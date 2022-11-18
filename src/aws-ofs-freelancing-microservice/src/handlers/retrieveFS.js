@@ -17,4 +17,4 @@ async function retrieveFS(event, context) {
     };
 }
   
-  export const handler = retrieveFS
+export const handler = retrieveFS

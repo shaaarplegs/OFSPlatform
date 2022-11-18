@@ -19,6 +19,6 @@ export const createStatusObject = (props) => {
         scheduledTime:props.scheduledTime
     }
     return jsonObject;
-}  
+}
 
 

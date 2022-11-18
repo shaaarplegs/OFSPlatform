@@ -1,9 +1,6 @@
-import { v4 as uuid} from 'uuid';
-import AWS from 'aws-sdk';
-const dynamodb = new AWS.DynamoDB.DocumentClient();
-const eventbridge = new AWS.EventBridge()
+import { createFreelancingObject, putToDynamoDB, DispatchEvent } from './Freelancing.js';
 
-async function createFS(event, context, callback) {
+async function createFS(event) {
 
   const {vertical_id} = JSON.parse(event.body)
   const {name} = JSON.parse(event.body)
@@ -12,40 +9,19 @@ async function createFS(event, context, callback) {
   const {price} = JSON.parse(event.body)
   const {scheduledTime} = JSON.parse(event.body)
 
-  const now = new Date();
-
-  const newFS = {
-      id: uuid(),
-      createdAt: now.toISOString(),
+  console.log('Creating freelancing object...')
+  const newFS = createFreelancingObject({
       vertical_id,
       name,
       city,
       description,
       price
-  }
+  })
+  
+  await putToDynamoDB(newFS).promise();
 
-  await dynamodb.put({
-    TableName: process.env.FS_TABLE_NAME,
-    Item: newFS
-  }).promise();
-
-
-  const params = {
-    Entries: [ 
-      {
-        Detail: JSON.stringify({
-          fs_id:newFS.id,
-          scheduledTime:scheduledTime
-        }),
-        EventBusName: 'aws-ofs-eventBus',
-        DetailType: 'create',
-        Source: 'vertical.createFS',
-        Time: new Date()
-      }
-    ]
-  }
-  const result = await eventbridge.putEvents(params).promise()
-  console.log(result)
+  console.log('Sending event to eventBridge...')
+  await DispatchEvent({fs_id:newFS.id, scheduledTime:scheduledTime}).promise()
 
   
   return {

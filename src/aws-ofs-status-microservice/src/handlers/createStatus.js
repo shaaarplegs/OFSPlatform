@@ -1,4 +1,4 @@
-import { createStatusObject } from './Status.js';
+import { createStatusObject, putToDynamoDB } from './Status.js';
 import AWS from 'aws-sdk';
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
