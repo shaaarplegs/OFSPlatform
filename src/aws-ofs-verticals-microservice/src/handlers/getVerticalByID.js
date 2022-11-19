@@ -2,7 +2,7 @@
 import AWS from 'aws-sdk';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
-
+ 
 async function getVerticalByID(event, context) {
     let verticals;
     const {id} = event.pathParameters;
