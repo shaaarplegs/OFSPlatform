@@ -32,7 +32,6 @@ jobs:
 
 
 
-
   # Build_Verticals_Microservice:
   #   name: Verticals microservice deployment
   #   runs-on: ubuntu-latest
