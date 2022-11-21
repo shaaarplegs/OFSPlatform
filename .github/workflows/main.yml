@@ -10,18 +10,19 @@ jobs:
     name: Verticals microservice vunerabilities check
     runs-on: ubuntu-latest
     defaults:
-      run:
-        working-directory: src/aws-ofs-verticals-microservice
+        run:
+          working-directory: src/aws-ofs-verticals-microservice
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
-    - name: debug folder
-      run: ls
-    - name: install Snyk CLI
-      run: npm install -g snyk
-    - name: run Snyk Open Source Test
-      run: snyk test
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-  
+    - uses: actions/checkout@v3
+    - name: using NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    
 
 
 
