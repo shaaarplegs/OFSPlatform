@@ -9,6 +9,8 @@ jobs:
   Vunerabilities_Check:
     name: Vunerabilities Check of all microservices
     runs-on: ubuntu-latest
+    env:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     steps:
     - uses: actions/checkout@v3
     - name: install Snyk CLI
@@ -22,8 +24,7 @@ jobs:
     - name: Status microservice security check
       working-directory: src/aws-ofs-status-microservice
       run: snyk test
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
 
     
 
