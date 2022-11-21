@@ -9,4 +9,10 @@ src/aws-ofs-verticals-microservice/.serverless
 src/aws-ofs-freelancing-microservice/.serverless
 src/aws-ofs-status-microservice/.serverless
 
+
+#IntegrationTests with python
+src/IntegrationTest/__pycache__
+src/IntegrationTest/.pytest_cache
+src/IntegrationTest/env
+
 IAMCred.txt
