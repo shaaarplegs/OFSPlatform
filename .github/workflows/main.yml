@@ -12,16 +12,8 @@ jobs:
     defaults:
         run:
           working-directory: src/aws-ofs-verticals-microservice
-    strategy:
-      matrix:
-        node-version: [16.x]
     steps:
     - uses: actions/checkout@v3
-    - name: using NodeJS
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
     - name: install Snyk CLI
       run: npm install -g snyk
     - name: run Snyk Open Source Test
