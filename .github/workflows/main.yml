@@ -6,15 +6,21 @@ on:
       - main
 
 jobs:
-  VunerabilitiesCheck_Verticals_Microservice:
-    name: Verticals microservice vunerabilities check
+  Vunerabilities_Check:
+    name: Vunerabilities Check of all microservices
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: install Snyk CLI
       run: npm install -g snyk
-    - name: run Snyk Open Source Test
+    - name: Verticals microservice security check
       working-directory: src/aws-ofs-verticals-microservice
+      run: snyk test
+    - name: Freelancing microservice security check
+      working-directory: src/aws-ofs-freelancing-microservice
+      run: snyk test
+    - name: Status microservice security check
+      working-directory: src/aws-ofs-status-microservice
       run: snyk test
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
