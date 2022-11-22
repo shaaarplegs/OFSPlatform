@@ -17,13 +17,13 @@ cloudformation = boto3.resource(
 def getApiGatewayGeneratedID():
     for stack in cloudformation.stacks.all():
         for r in stack.resource_summaries.all() :
-            if (str(r.stack_name)=="aws-ofs-verticals-microservice-dev") & (str(r.logical_id) == 'HttpApi') :
+            if (str(r.stack_name)=="aws-ofs-freelancing-microservice-dev") & (str(r.logical_id) == 'HttpApi') :
                 return str(r.physical_resource_id)
 
-def getVerticals():
-    return requests.get('https://{generatedId}.execute-api. `.amazonaws.com/vertical'.format(generatedId=getApiGatewayGeneratedID())).json()
+def getFreelancingServices():
+    return requests.get('https://{generatedId}.execute-api. `.amazonaws.com/fs'.format(generatedId=getApiGatewayGeneratedID())).json()
 
 
 def test_retrieveVerticals():
-    VerticalsDic = getVerticals()
-    assert len(VerticalsDic['verticals']) == 0
+    fsDic = getFreelancingServices()
+    assert len(fsDic['freelancingservices']) == 0
