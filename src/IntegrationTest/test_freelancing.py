@@ -21,9 +21,9 @@ def getApiGatewayGeneratedID():
                 return str(r.physical_resource_id)
 
 def getFreelancingServices():
-    return requests.get('https://{generatedId}.execute-api. `.amazonaws.com/fs'.format(generatedId=getApiGatewayGeneratedID())).json()
+    return requests.get('https://{generatedId}.execute-api.eu-west-1.amazonaws.com/fs'.format(generatedId=getApiGatewayGeneratedID())).json()
 
 
-def test_retrieveVerticals():
+def test_retrieveFS():
     fsDic = getFreelancingServices()
     assert len(fsDic['freelancingservices']) == 0

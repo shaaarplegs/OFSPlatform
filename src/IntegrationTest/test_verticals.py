@@ -21,7 +21,7 @@ def getApiGatewayGeneratedID():
                 return str(r.physical_resource_id)
 
 def getVerticals():
-    return requests.get('https://{generatedId}.execute-api. `.amazonaws.com/vertical'.format(generatedId=getApiGatewayGeneratedID())).json()
+    return requests.get('https://{generatedId}.execute-api.eu-west-1.amazonaws.com/vertical'.format(generatedId=getApiGatewayGeneratedID())).json()
 
 
 def test_retrieveVerticals():
