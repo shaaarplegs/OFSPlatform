@@ -3,3 +3,4 @@ numpy
 requests
 pytest
 boto3
+os
