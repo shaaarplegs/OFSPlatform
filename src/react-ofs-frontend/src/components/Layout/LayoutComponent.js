@@ -31,7 +31,7 @@ const LayoutComponent = props => {
           </Header>
           <Content style={{ padding: '0 50px', height: '900px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Welcome, Mohammed Al harbi</Breadcrumb.Item>
+              <Breadcrumb.Item>Welcome, Mohammed Al harbi (test)</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-content">Content</div>
           </Content>
