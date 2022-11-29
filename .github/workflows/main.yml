@@ -177,7 +177,8 @@ jobs:
     - run: npm ci
     - name: build the frontend artifact
       run: npm run prod
-      
+    - name: have a look at existing files in current repo
+      run: ls
     - name: push the artificat to AWS S3 hosting bucket
       uses: jakejarvis/s3-sync-action@master
       with:
