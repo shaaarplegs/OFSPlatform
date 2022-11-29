@@ -1,13 +1,7 @@
 import { DispatchEvent } from './Publisher.js';
 
-
 async function signupVerticalpublisher(event) {
-
-  console.log("event: ")
-  console.log(event.body)
-  
-  return await DispatchEvent({event:event.body}).promise()
-  
+  return await DispatchEvent({event:event.body,Source:"user.registerVertical"}).promise()
 }
   
-  export const handler = signupVerticalpublisher;
+export const handler = signupVerticalpublisher;

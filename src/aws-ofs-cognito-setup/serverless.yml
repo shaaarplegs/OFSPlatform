@@ -18,10 +18,26 @@ functions:
           pattern:
             source:
               - user.registerVertical
+
+  signupAuthorizerFS:
+    handler: src/handlers/signupAuthorizerFS.handler
+    events:
+      - eventBridge:
+          eventBus: 'aws-ofs-eventBus-Registeration'
+          pattern:
+            source:
+              - user.registerFS
   
   signupVerticalpublisher:
     handler: src/handlers/signupVerticalpublisher.handler
     events:
      - httpApi:
          path: /register/vertical
+         method: post
+
+  signupFSpublisher:
+    handler: src/handlers/signupFSpublisher.handler
+    events:
+     - httpApi:
+         path: /register/fs
          method: post

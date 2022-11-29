@@ -2,7 +2,6 @@
 import AWS from 'aws-sdk';
 const eventbridge = new AWS.EventBridge()
 
-
 export const DispatchEvent = props => {
     const params = {
         Entries: [ 
@@ -12,7 +11,7 @@ export const DispatchEvent = props => {
             }),
             EventBusName: 'aws-ofs-eventBus-Registeration',
             DetailType: 'register',
-            Source: "user.registerVertical",
+            Source: props.Source,
             Time: new Date()
         }
     ]}
