@@ -159,7 +159,7 @@ jobs:
 
 
   Deploy_frontend_AWS:
-    needs: [Integration_test]
+   # needs: [Integration_test]
     name: Deploy react app the hosting bucket in AWS
     runs-on: ubuntu-latest
     defaults:
