@@ -178,7 +178,6 @@ jobs:
     - name: build the frontend artifact
       run: npm run prod
     - name: push the artificat to AWS S3 hosting bucket
-      uses: actions/checkout@master
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
