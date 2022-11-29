@@ -27,9 +27,6 @@ jobs:
     - name: Status microservice security check
       working-directory: src/aws-ofs-status-microservice
       run: snyk test
-    - name: Frontend security check
-      working-directory: src/react-ofs-frontend
-      run: snyk test
 
   Build_Cognito_assets:
     needs: [Vunerabilities_Check]
