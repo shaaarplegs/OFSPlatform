@@ -15,6 +15,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: install Snyk CLI
       run: npm install -g snyk
+    - name: cognito configs security check
+      working-directory: src/aws-ofs-cognito-setup
+      run: snyk test
     - name: Verticals microservice security check
       working-directory: src/aws-ofs-verticals-microservice
       run: snyk test
@@ -24,6 +27,36 @@ jobs:
     - name: Status microservice security check
       working-directory: src/aws-ofs-status-microservice
       run: snyk test
+
+  Build_Cognito_assets:
+    needs: [Vunerabilities_Check]
+    name: Setup cognito configs
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/aws-ofs-cognito-setup
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: using NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Install Serverless Framework
+      run: npm install -g serverless
+    - name: Serverless AWS authentication
+      run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Deploy verticals microservice to AWS
+      run: serverless deploy
+
+
+
+
+
+
 
 
   Build_Verticals_Microservice:
@@ -106,7 +139,7 @@ jobs:
       run: serverless deploy
 
   Integration_test:
-    needs: [Build_Verticals_Microservice, Build_Freelancing_Microservice, Build_Status_Microservice]
+    needs: [Build_Verticals_Microservice, Build_Freelancing_Microservice, Build_Status_Microservice,Build_Cognito_assets]
     name: Integration test microservice deployment
     runs-on: ubuntu-latest
     defaults:

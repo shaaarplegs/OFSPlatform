@@ -1,0 +1,27 @@
+service: aws-ofs-cognito-setup
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: eu-west-1
+  iamRoleStatements:
+    - ${file(IAM/signupAuthorizerIAM.yaml):signupAuthorizerIAM}
+
+functions:
+  signupAuthorizerVertical:
+    handler: src/handlers/signupAuthorizerVertical.handler
+    events:
+      - eventBridge:
+          eventBus: 'aws-ofs-eventBus-Registeration'
+          pattern:
+            source:
+              - user.registerVertical
+  
+  signupVerticalpublisher:
+    handler: src/handlers/signupVerticalpublisher.handler
+    events:
+     - httpApi:
+         path: /register/vertical
+         method: post

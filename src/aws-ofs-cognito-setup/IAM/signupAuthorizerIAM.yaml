@@ -1,0 +1,7 @@
+signupAuthorizerIAM:
+  Effect: Allow
+  Action:
+    - cognito-idp:AdminAddUserToGroup
+    - events:PutEvents 
+  Resource: 
+    - "*"

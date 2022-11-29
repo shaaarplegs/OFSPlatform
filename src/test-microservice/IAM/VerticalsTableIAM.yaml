@@ -1,6 +1,0 @@
-VerticalsTableIAM:
-  Effect: Allow
-  Action:
-    - dynamodb:*
-  Resource: 
-    - "*"

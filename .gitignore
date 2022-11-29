@@ -2,15 +2,15 @@
 src/aws-ofs-verticals-microservice/node_modules
 src/aws-ofs-freelancing-microservice/node_modules
 src/aws-ofs-status-microservice/node_modules
-src/test-microservice/node_modules
+src/aws-ofs-cognito-setup/node_modules
+src/react-ofs-frontend/node_modules
 
 # Serverless directories
 .serverless
 src/aws-ofs-verticals-microservice/.serverless
 src/aws-ofs-freelancing-microservice/.serverless
 src/aws-ofs-status-microservice/.serverless
-src/test-microservice/.serverless
-
+src/aws-ofs-cognito-setup/.serverless
 
 #IntegrationTests with python
 src/IntegrationTest/__pycache__
