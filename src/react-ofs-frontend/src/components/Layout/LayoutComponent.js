@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Breadcrumb, Layout, Menu } from 'antd';
+import TestJWT from "../JWT Experiment/TestJWT";
 
 const { Header, Content, Footer } = Layout;
 const LayoutComponent = props => {
@@ -7,12 +8,11 @@ const LayoutComponent = props => {
     const [itemName, setItemName] = useState("Select User Name");
     const items = [
       { label: 'Home', key: 'item-1' },
-      { label: 'Login', key: 'auth-menu-login' },
-      { label: 'Signup', key: 'auth-menu-signup' }
+      { label: 'Authenticate', key: 'auth-menu' },
     ];
 
-    if (itemName === "Login") {
-      window.location.replace("https://ofs-auth.auth.eu-west-1.amazoncognito.com/login?client_id=1jtts78b0cqdkt0ual269pfu51&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=http://localhost:3000/");
+    if (itemName === "Authenticate") {
+      window.location.replace("https://ofs-auth.auth.eu-west-1.amazoncognito.com/login?client_id=1jtts78b0cqdkt0ual269pfu51&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://ofs-platform.com/");
     }
 
     return (
@@ -34,6 +34,7 @@ const LayoutComponent = props => {
               <Breadcrumb.Item>Welcome, Mohammed Al harbi (test)</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-content">Content</div>
+            <TestJWT />
           </Content>
           <Footer style={{ textAlign: 'center' }}>All copyrights reserved © 2022 to Oman freelancing service platform</Footer>
     </Layout>
