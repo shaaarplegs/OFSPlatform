@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { Breadcrumb, Layout, Menu } from 'antd';
+import { useSelector } from "react-redux";
 const { Header, Content, Footer } = Layout;
 
 
 const LayoutFS = props => {
+    const userData = useSelector((state) => state.auth.userData);
     const [itemName, setItemName] = useState("Home");
     const items = [
       { label: 'Home', key: 'item-1' },
@@ -29,7 +31,8 @@ const LayoutFS = props => {
           </Header>
           <Content style={{ padding: '0 50px', height: '900px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Welcome, freelancer</Breadcrumb.Item>
+            <Breadcrumb.Item>Freelancer</Breadcrumb.Item>
+              <Breadcrumb.Item>Welcome, {userData.name}</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-content"> 
 

@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { Breadcrumb, Layout, Menu } from 'antd';
+import { useSelector } from "react-redux";
 const { Header, Content, Footer } = Layout;
 
 
 const LayoutSS = props => {
+    const userData = useSelector((state) => state.auth.userData);
     const [itemName, setItemName] = useState("Home");
     const items = [
       { label: 'Home', key: 'item-1' },
@@ -24,12 +26,13 @@ const LayoutSS = props => {
               onClick={({ key }) => {
                 setItemName(items.find((elm) => elm.key === key).label);
                 console.log(items.find((elm) => elm.key === key).label)
-            }}
+              }}
             />
           </Header>
           <Content style={{ padding: '0 50px', height: '900px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Welcome, service seeker</Breadcrumb.Item>
+              <Breadcrumb.Item>Service seeker</Breadcrumb.Item>
+              <Breadcrumb.Item>Welcome, {userData.name}</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-content"> 
 

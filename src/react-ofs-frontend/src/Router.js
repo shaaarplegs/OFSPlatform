@@ -16,7 +16,7 @@ const Router = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const userData = useSelector((state) => state.auth.userData);
   const dispatch = useDispatch()
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const tokenInsideUrl = UrlHasToken() 
 
     useEffect(()=> {
@@ -35,7 +35,7 @@ const Router = () => {
                 navigate("/")
             }
         }
-    },[tokenInsideUrl])
+    },[tokenInsideUrl, dispatch, navigate])
 
   return (
     <Routes>
