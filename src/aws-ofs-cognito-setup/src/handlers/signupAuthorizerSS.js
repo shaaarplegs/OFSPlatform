@@ -1,6 +1,6 @@
 import AWS from 'aws-sdk';
 
-async function signupAuthorizerVertical(event) {
+async function signupAuthorizerSS(event) {
 
     const detail = JSON.parse(event.detail.event)
 
@@ -9,7 +9,7 @@ async function signupAuthorizerVertical(event) {
     const userPool = issSplat[issSplat.length-1]
     
     var params = { 
-      GroupName: 'verticals',
+      GroupName: 'ss',
       UserPoolId: userPool,
       Username: detail.sub
     }
@@ -21,4 +21,4 @@ async function signupAuthorizerVertical(event) {
     return event
 }
 
-export const handler = signupAuthorizerVertical
+export const handler = signupAuthorizerSS

@@ -1,14 +1,14 @@
 
 import './App.css';
-import LayoutComponent from './components/Layout/LayoutComponent';
+import Router from './Router';
 
 function App() {
 
 
   return (
       <>
-        <LayoutComponent />
-    </>
+        <Router ></Router>
+     </>
   );
 }
 

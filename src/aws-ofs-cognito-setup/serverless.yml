@@ -6,18 +6,20 @@ provider:
   runtime: nodejs16.x
   stage: dev
   region: eu-west-1
+  httpApi:
+    cors: true
   iamRoleStatements:
     - ${file(IAM/signupAuthorizerIAM.yaml):signupAuthorizerIAM}
 
 functions:
-  signupAuthorizerVertical:
-    handler: src/handlers/signupAuthorizerVertical.handler
+  signupAuthorizerSS:
+    handler: src/handlers/signupAuthorizerSS.handler
     events:
       - eventBridge:
           eventBus: 'aws-ofs-eventBus-Registeration'
           pattern:
             source:
-              - user.registerVertical
+              - user.registerSS
 
   signupAuthorizerFS:
     handler: src/handlers/signupAuthorizerFS.handler
@@ -28,11 +30,11 @@ functions:
             source:
               - user.registerFS
   
-  signupVerticalpublisher:
-    handler: src/handlers/signupVerticalpublisher.handler
+  signupSSpublisher:
+    handler: src/handlers/signupSSpublisher.handler
     events:
      - httpApi:
-         path: /register/vertical
+         path: /register/ss
          method: post
 
   signupFSpublisher:
