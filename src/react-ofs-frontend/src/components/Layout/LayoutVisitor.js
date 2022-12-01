@@ -36,7 +36,7 @@ const LayoutVisitor = props => {
             </Breadcrumb>
             <div className="site-layout-content"> 
                 {
-                  itemName == "Register" && (
+                  itemName === "Register" && (
                     <Register />
                   )
                 }

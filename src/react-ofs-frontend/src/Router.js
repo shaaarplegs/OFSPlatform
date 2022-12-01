@@ -20,6 +20,7 @@ const Router = () => {
   const tokenInsideUrl = UrlHasToken() 
 
     useEffect(()=> {
+
         if(tokenInsideUrl) {
             let currntUrl = window.location.href
             if(currntUrl.split("confirmation/ss").length > 1){
@@ -35,6 +36,7 @@ const Router = () => {
                 navigate("/")
             }
         }
+
     },[tokenInsideUrl, dispatch, navigate])
 
   return (
@@ -46,7 +48,7 @@ const Router = () => {
         {/* Service seeker logged in */}
         {
             isLoggedIn && (
-                userData["cognito:groups"][0] == "ss" && (
+                userData["cognito:groups"][0] === "ss" && (
                     <Route path="/" element={<LayoutSS/>} />
                 )
             )   
@@ -55,7 +57,7 @@ const Router = () => {
         {/* Freelancer logged in */}
         {
             isLoggedIn && (
-                userData["cognito:groups"][0] == "fs" && (
+                userData["cognito:groups"][0] === "fs" && (
                     <Route path="/" element={<LayoutFS/>} />
                 )
             )   
