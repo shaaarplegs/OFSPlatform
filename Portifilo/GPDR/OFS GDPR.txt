@@ -1,0 +1,16 @@
+Given the handbook of applied GPDR in Oman. The following measurement are taken into consideration.
+
+In OFS platform personal information sign up requirement are all used and there is no personal information not being utilized. 
+
+1.	The address is used to identity where the freelancing services are.
+2.	The first and last name is being displayed to other service seekers when looking for a freelancing service of their need.
+3.	Phone number is used for contact purposes in case a service seeker is interested.
+
+Any signed-up user information is persisted in Cognito which means the security of PI will be their responsibility. 
+
+Given the processes mentioned in the handbook OFS does process PI, for example a user first name and last name are displayed in the freelancing search section and selecting one for chat means you must retrieve his personal first then retrieve his ID to continue chatting.
+
+For that purposes every OFS user will have to sign up a privacy policy which states the processing his above PI information and allow OFS to process chat message / accepting / declining freelancing requests which allow OFS administrators to determine insights about the services trends and similar insights analyses actions. OFS additionally will NOT perform any ML actions on the PI. 
+
+
+

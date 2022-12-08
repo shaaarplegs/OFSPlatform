@@ -6,6 +6,8 @@ provider:
   runtime: nodejs16.x
   stage: dev
   region: eu-west-1
+  httpApi:
+    cors: true
   environment:
     VERTICALS_TABLE_NAME: ${self:custom.VerticalsTable.name}
   iamRoleStatements:
@@ -21,6 +23,7 @@ functions:
 
   createVertical:
     handler: src/handlers/createVertical.handler
+    memorySize: 128
     events:
      - httpApi:
          path: /vertical
@@ -48,7 +51,41 @@ resources:
           - AttributeName: id
             KeyType: HASH
 
+    TargetSQS:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: QR_MESSAGE_VERTICAL_CREATION
+    
+    TargetSQSRule:
+      Type: AWS::Events::Rule
+      Properties:
+        EventBusName: "aws-ofs-eventBus"
+        EventPattern:
+          source: 
+            - "vertical.createVertical"
+        Targets:
+          - Arn: ${self:custom.TargetSQS.arn}
+            Id: qr-event-bus-target-sqs
+
+    TargetSQSPolicy:
+      Type: AWS::SQS::QueuePolicy
+      Properties:
+        Queues: 
+          - ${self:custom.TargetSQS.name}
+        PolicyDocument:
+          Statement:
+            - Effect: "Allow"
+              Action:
+                - "SQS:SendMessage" 
+              Resource: ${self:custom.TargetSQS.arn}
+              Principal:
+                Service: events.amazonaws.com
+
 custom:
   VerticalsTable:
     name: !Ref VerticalsTable
     arn: !GetAtt VerticalsTable.Arn
+
+  TargetSQS:
+    name: !Ref TargetSQS
+    arn: !GetAtt TargetSQS.Arn

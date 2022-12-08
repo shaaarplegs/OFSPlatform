@@ -4,8 +4,6 @@ import AWS from 'aws-sdk';
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 const eventbridge = new AWS.EventBridge()
 
-
-
 export const putToDynamoDB = (item) => {
     return dynamodb.put({
         TableName: process.env.FS_TABLE_NAME,

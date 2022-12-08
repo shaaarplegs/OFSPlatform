@@ -2,5 +2,6 @@ VerticalsTableIAM:
   Effect: Allow
   Action:
     - dynamodb:*
+    - events:*
   Resource: 
     - "*"
