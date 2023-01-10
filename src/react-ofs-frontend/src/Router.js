@@ -10,6 +10,7 @@ import { UrlHasToken, getToken,ParseTokenInfo,ConfirmFreelancerRegisterationThun
 import LayoutVisitor from "./components/Layout/LayoutVisitor";
 import LayoutSS from "./components/Layout/LayoutSS";
 import LayoutFS from "./components/Layout/LayoutFS";
+import { useHistory } from "react-router-dom";
 
 const Router = () => {
 
@@ -49,7 +50,10 @@ const Router = () => {
         {
             isLoggedIn && (
                 userData["cognito:groups"][0] === "ss" && (
-                    <Route path="/" element={<LayoutSS/>} />
+                    <>
+                        <Route path="/" element={<LayoutSS/>} />
+                        {console.log(userData)}
+                    </>
                 )
             )   
         }

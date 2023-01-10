@@ -32,6 +32,7 @@ export const authSlice = createSlice({
     },
     login: (state,action) => {
       state.isLoggedIn = true;
+      console.log(action)
       state.userData = action.payload;
     }
   },
@@ -55,6 +56,8 @@ export const getToken = () => {
 export const ParseTokenInfo = (token) => {
   if (token !== "") {
     var decoded = jwt_decode(token);
+    console.log(token)
+    console.log(decoded)  
     return decoded
   }
   else 
