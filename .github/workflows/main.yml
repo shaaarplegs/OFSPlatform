@@ -6,20 +6,18 @@ on:
       - main
 
 jobs:
-  build:
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 12.x
-    - name: Install dependencies
-      run: npm install
-    - name: Analyze with SonarCloud
-      uses: sonarsource/sonarcloud-github-action@v1
-      with:
-        args: -Dsonar.organization=harbitech -Dsonar.projectKey=OFSP -Dsonar.login=${secrets.SONAR_TOKEN}
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   # Vunerabilities_Check:
   #   name: Vunerabilities Check of all microservices
   #   runs-on: ubuntu-latest
