@@ -205,8 +205,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i
     - run: nohup npm start &
-    - run: npx cypress run
-      env:
-        CYPRESS_E2E_USERNAME: ${{ secrets.CYPRESS_E2E_USERNAME }}
-        CYPRESS_E2E_PASSWORD: ${{ secrets.CYPRESS_E2E_PASSWORD }}
+    - run: npx cypress run --env CYPRESS_E2E_USERNAME=${{ secrets.CYPRESS_E2E_USERNAME }},CYPRESS_E2E_PASSWORD=${{ secrets.CYPRESS_E2E_PASSWORD }}
 
