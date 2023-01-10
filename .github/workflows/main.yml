@@ -161,8 +161,31 @@ jobs:
   #       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 
+  e2e:
+    # needs: [Integration_test]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/react-ofs-frontend
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - name: Write the cypress.env.json file 📝
+      run: |
+        echo '${{ secrets.TESTING_PERSONA }}' > cypress.env.json
+
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i
+    - run: nohup npm start &
+    - run: npx cypress run
+
   # Deploy_frontend_AWS:
-  #   needs: [Integration_test]
+  #   needs: [e2e]
   #   name: Deploy react app the hosting bucket in AWS
   #   runs-on: ubuntu-latest
   #   defaults:
@@ -189,25 +212,3 @@ jobs:
   #       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   #       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   #       AWS_DEFAULT_REGION: 'eu-west-1'
-  e2e:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src/react-ofs-frontend
-    strategy:
-      matrix:
-        node-version: [16.x]
-    steps:
-    - name: Write the cypress.env.json file 📝
-      run: |
-        echo '${{ secrets.TESTINGPERSONA }}' > cypress.env.json
-
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm i
-    - run: nohup npm start &
-    - run: npx cypress run
-
