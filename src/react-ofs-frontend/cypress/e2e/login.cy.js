@@ -1,5 +1,4 @@
-
-
+/// <reference types="cypress" />
 
 it("Check if login button exists in the landing page", ()=> {
     cy.visit('http://localhost:3000/')
@@ -16,8 +15,8 @@ it("Go to the login page", ()=> {
     cy.visit('http://localhost:3000/')
     cy.get('[style="opacity: 1; order: 1;"]').click()
     cy.origin('https://ofs-auth.auth.eu-west-1.amazoncognito.com', () => {
-        cy.get('#signInFormUsername').type(process.env.CYPRESS_E2E_USERNAME, {force: true})
-        cy.get('#signInFormPassword').type(process.env.CYPRESS_E2E_PASSWORD, {force: true})
+        cy.get('#signInFormUsername').type(Cypress.env().username, {force: true})
+        cy.get('#signInFormPassword').type(Cypress.env().password, {force: true})
         // cy.get('input[value="Sign in"]').click({ multiple: true })
         cy.get('input[name="signInSubmitButton"]').click({ multiple: true, force:true })
     })

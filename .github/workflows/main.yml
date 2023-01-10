@@ -198,6 +198,10 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
+    - name: Write the cypress.env.json file 📝
+      run: |
+        echo '${{ secrets.TESTINGPERSONA }}' > cypress.env.json
+
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -205,5 +209,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i
     - run: nohup npm start &
-    - run: npx cypress run --env CYPRESS_E2E_USERNAME=${{ secrets.CYPRESS_E2E_USERNAME }},CYPRESS_E2E_PASSWORD=${{ secrets.CYPRESS_E2E_PASSWORD }}
+    - run: npx cypress run
 

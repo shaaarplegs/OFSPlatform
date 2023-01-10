@@ -8,6 +8,7 @@
 # testing
 /coverage
 /cypress/persona/testingpersona.json
+cypress.env.json
 
 # production
 /build
