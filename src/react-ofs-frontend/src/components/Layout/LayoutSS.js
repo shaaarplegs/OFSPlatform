@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Breadcrumb, Layout, Menu } from 'antd';
 import { useSelector } from "react-redux";
+import PrivacyPolicy from "./PrivacyPolicy";
 const { Header, Content, Footer } = Layout;
 
 
@@ -35,7 +36,11 @@ const LayoutSS = props => {
               <Breadcrumb.Item>Welcome, {userData.name}</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-content"> 
-
+            {
+                  itemName === "Home" && (
+                    <PrivacyPolicy />
+                  )
+                }
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>All copyrights reserved © 2022 to Oman freelancing service platform</Footer>

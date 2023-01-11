@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Breadcrumb, Layout, Menu } from 'antd';
 import Register from "../Register.js";
+import PrivacyPolicy from "./PrivacyPolicy.js";
 const { Header, Content, Footer } = Layout;
 
 
@@ -38,6 +39,11 @@ const LayoutVisitor = props => {
                 {
                   itemName === "Register" && (
                     <Register />
+                  )
+                }
+                {
+                  itemName === "Home" && (
+                    <PrivacyPolicy />
                   )
                 }
             </div>
