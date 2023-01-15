@@ -69,7 +69,7 @@ const PricingEstimator = () => {
       <br />
 
       {
-        predicted == true && (
+        predicted === true && (
             <h3 className="pricing-estimator__price">Price: {price} Rial Omani</h3>
         ) 
       }
