@@ -28,6 +28,9 @@ functions:
      - httpApi:
          path: /vertical
          method: post
+  createVerticalsSQSBatch:
+    handler: src/handlers/createVerticalsSQSBatch.handler
+    memorySize: 128
       
   getVerticalByID:
     handler: src/handlers/getVerticalByID.handler

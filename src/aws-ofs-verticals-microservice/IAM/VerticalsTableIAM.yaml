@@ -3,5 +3,6 @@ VerticalsTableIAM:
   Action:
     - dynamodb:*
     - events:*
+    - sqs:*
   Resource: 
     - "*"

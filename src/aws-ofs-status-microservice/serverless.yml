@@ -44,9 +44,6 @@ resources:
           - AttributeName: fs_id
             KeyType: HASH
 
-
-
-
 custom:
   StatusTable:
     name: !Ref StatusTable

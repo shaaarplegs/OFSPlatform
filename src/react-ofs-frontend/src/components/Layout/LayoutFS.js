@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Breadcrumb, Layout, Menu } from 'antd';
 import { useSelector } from "react-redux";
 import PrivacyPolicy from "./PrivacyPolicy";
+import PricingEstimator from "../PricingEstimator";
 const { Header, Content, Footer } = Layout;
 
 
@@ -10,6 +11,7 @@ const LayoutFS = props => {
     const [itemName, setItemName] = useState("Home");
     const items = [
       { label: 'Home', key: 'item-1' },
+      { label: 'Service price estimator', key: 'item-2' },
     ];
 
     if (itemName === "Login") {
@@ -36,11 +38,16 @@ const LayoutFS = props => {
               <Breadcrumb.Item>Welcome, {userData.name}</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-content"> 
-            {
+              {
                   itemName === "Home" && (
                     <PrivacyPolicy />
                   )
-                }
+              }
+              {
+                  itemName === "Service price estimator" && (
+                    <PricingEstimator />
+                  )
+              }
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>All copyrights reserved © 2022 to Oman freelancing service platform</Footer>
@@ -48,4 +55,4 @@ const LayoutFS = props => {
     )
 }
 
-export default LayoutFS
+export default LayoutFS 
