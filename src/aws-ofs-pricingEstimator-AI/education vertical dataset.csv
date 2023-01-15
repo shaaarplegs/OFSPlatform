@@ -1,152 +1,141 @@
-﻿id,vertical,FS,price
-0,education,IT DEV Specialist,54
-1,education,IT DEV Specialist,55
-2,education,IT DEV Specialist,53
-3,education,IT DEV Specialist,55
-4,education,IT DEV Specialist,52
-5,education,IT DEV Specialist,51
-6,education,IT DEV Specialist,53
-7,education,IT DEV Specialist,55
-8,education,IT DEV Specialist,54
-9,education,IT DEV Specialist,52
-10,education,IT DEV Specialist,55
-11,education,IT DEV Specialist,55
-12,education,IT DEV Specialist,54
-13,education,IT DEV Specialist,51
-14,education,IT DEV Specialist,54
-15,education,IT DEV Specialist,55
-16,education,IT DEV Specialist,55
-17,education,IT DEV Specialist,53
-18,education,IT DEV Specialist,54
-19,education,IT DEV Specialist,54
-20,education,IT DEV Specialist,54
-21,education,IT DEV Specialist,55
-22,education,IT DEV Specialist,55
-23,education,IT DEV Specialist,54
-24,education,IT DEV Specialist,52
-25,education,IT DEV Specialist,55
-26,education,IT DEV Specialist,51
-27,education,IT DEV Specialist,51
-28,education,IT DEV Specialist,54
-29,education,IT DEV Specialist,52
-30,education,IT DEV Specialist,53
-31,education,IT DEV Specialist,51
-32,education,IT DEV Specialist,53
-33,education,IT DEV Specialist,52
-34,education,IT DEV Specialist,55
-35,education,IT DEV Specialist,55
-36,education,IT DEV Specialist,53
-37,education,IT DEV Specialist,54
-38,education,IT DEV Specialist,52
-39,education,IT DEV Specialist,55
-40,education,IT DEV Specialist,54
-41,education,IT DEV Specialist,55
-42,education,IT DEV Specialist,54
-43,education,IT DEV Specialist,54
-44,education,IT DEV Specialist,51
-45,education,IT DEV Specialist,55
-46,education,IT DEV Specialist,51
-47,education,IT DEV Specialist,51
-48,education,IT DEV Specialist,51
-49,education,Kayaking coach,155
-50,education,Kayaking coach,152
-51,education,Kayaking coach,155
-52,education,Kayaking coach,151
-53,education,Kayaking coach,153
-54,education,Kayaking coach,151
-55,education,Kayaking coach,155
-56,education,Kayaking coach,153
-57,education,Kayaking coach,152
-58,education,Kayaking coach,152
-59,education,Kayaking coach,155
-60,education,Kayaking coach,155
-61,education,Kayaking coach,152
-62,education,Kayaking coach,151
-63,education,Kayaking coach,154
-64,education,Kayaking coach,154
-65,education,Kayaking coach,153
-66,education,Kayaking coach,155
-67,education,Kayaking coach,155
-68,education,Kayaking coach,151
-69,education,Kayaking coach,152
-70,education,Kayaking coach,153
-71,education,Kayaking coach,152
-72,education,Kayaking coach,151
-73,education,Kayaking coach,153
-74,education,Kayaking coach,151
-75,education,Kayaking coach,151
-76,education,Kayaking coach,155
-77,education,Kayaking coach,153
-78,education,Kayaking coach,153
-79,education,Kayaking coach,151
-80,education,Kayaking coach,151
-81,education,Kayaking coach,151
-82,education,Kayaking coach,153
-83,education,Kayaking coach,154
-84,education,Kayaking coach,152
-85,education,Kayaking coach,154
-86,education,Kayaking coach,151
-87,education,Kayaking coach,154
-88,education,Kayaking coach,153
-89,education,Kayaking coach,151
-90,education,Kayaking coach,155
-91,education,Kayaking coach,151
-92,education,Kayaking coach,153
-93,education,Kayaking coach,151
-94,education,Kayaking coach,154
-95,education,Kayaking coach,155
-96,education,Kayaking coach,154
-97,education,Kayaking coach,154
-98,education,Kayaking coach,154
-99,education,Pure Math teacher,25
-100,education,Pure Math teacher,25
-101,education,Pure Math teacher,23
-102,education,Pure Math teacher,22
-103,education,Pure Math teacher,25
-104,education,Pure Math teacher,23
-105,education,Pure Math teacher,24
-106,education,Pure Math teacher,21
-107,education,Pure Math teacher,25
-108,education,Pure Math teacher,25
-109,education,Pure Math teacher,21
-110,education,Pure Math teacher,23
-111,education,Pure Math teacher,24
-112,education,Pure Math teacher,25
-113,education,Pure Math teacher,22
-114,education,Pure Math teacher,21
-115,education,Pure Math teacher,24
-116,education,Pure Math teacher,25
-117,education,Pure Math teacher,22
-118,education,Pure Math teacher,24
-119,education,Pure Math teacher,25
-120,education,Pure Math teacher,21
-121,education,Pure Math teacher,24
-122,education,Pure Math teacher,22
-123,education,Pure Math teacher,22
-124,education,Pure Math teacher,23
-125,education,Pure Math teacher,22
-126,education,Pure Math teacher,25
-127,education,Pure Math teacher,21
-128,education,Pure Math teacher,22
-129,education,Pure Math teacher,25
-130,education,Pure Math teacher,25
-131,education,Pure Math teacher,25
-132,education,Pure Math teacher,25
-133,education,Pure Math teacher,24
-134,education,Pure Math teacher,24
-135,education,Pure Math teacher,23
-136,education,Pure Math teacher,22
-137,education,Pure Math teacher,21
-138,education,Pure Math teacher,21
-139,education,Pure Math teacher,23
-140,education,Pure Math teacher,24
-141,education,Pure Math teacher,23
-142,education,Pure Math teacher,21
-143,education,Pure Math teacher,21
-144,education,Pure Math teacher,23
-145,education,Pure Math teacher,25
-146,education,Pure Math teacher,21
-147,education,Pure Math teacher,21
-148,education,Pure Math teacher,24
-149,education,Pure Math teacher,25
-150,education,Pure Math teacher,22
+﻿id,vertical,FS,description,price
+0,education,IT DEV Specialist, Skilled in programming languages such as Java,54
+1,education,IT DEV Specialist, Experienced in developing and maintaining complex software systems.,55
+2,education,IT DEV Specialist, Knowledgeable in Agile development methodologies and DevOps practices.,53
+3,education,IT DEV Specialist, Strong problem-solving skills and ability to work well in a team.,55
+4,education,IT DEV Specialist, Proficient in using development tools such as Git and JIRA.,52
+5,education,IT DEV Specialist, Well-versed in Object-Oriented Programming concepts and design patterns.,51
+6,education,IT DEV Specialist, Knowledgeable in database management and SQL.,53
+7,education,IT DEV Specialist, Adept at creating and implementing software testing plans.,55
+8,education,IT DEV Specialist, Strong analytical skills and ability to understand customer requirements.,54
+9,education,IT DEV Specialist, Proficient in JavaScript and front-end web development frameworks.,52
+10,education,IT DEV Specialist, Experienced in cloud computing technologies and deployment.,55
+11,education,IT DEV Specialist, Strong understanding of software development lifecycle and best practices.,55
+12,education,IT DEV Specialist, Able to work independently and manage projects from start to finish.,54
+13,education,IT DEV Specialist, Skilled in debugging and troubleshooting code.,51
+14,education,IT DEV Specialist, Proficient in working with cross-functional teams and collaborating with stakeholders.,54
+15,education,IT DEV Specialist, Adept at creating and maintaining technical documentation.,55
+16,education,IT DEV Specialist, Experienced in leading software development teams and mentoring junior developers.,55
+17,education,IT DEV Specialist, Strong understanding of software architecture and design principles.,53
+18,education,IT DEV Specialist, Proficient in C# and the .NET framework.,54
+19,education,IT DEV Specialist, Able to work with a wide range of technologies and platforms.,54
+20,education,IT DEV Specialist, Strong analytical and problem-solving skills.,54
+21,education,IT DEV Specialist, Knowledgeable in Scrum and Kanban methodologies.,55
+22,education,IT DEV Specialist, Skilled in using version control systems like Git and SVN.,55
+23,education,IT DEV Specialist, Experienced in working with Linux and Unix operating systems.,54
+24,education,IT DEV Specialist, Proficient in working with RESTful APIs and web services.,52
+25,education,IT DEV Specialist, Strong understanding of security principles and how to apply them in software development.,55
+26,education,IT DEV Specialist, Adept at identifying and addressing performance issues in software systems.,51
+27,education,IT DEV Specialist, Skilled in front-end development using HTML,51
+28,education,IT DEV Specialist, Knowledgeable in Big data and data mining concepts.,54
+29,education,IT DEV Specialist, Proficient in working with front-end development frameworks such as React and Angular.,52
+30,education,IT DEV Specialist, Experienced in developing mobile applications for iOS and Android.,53
+31,education,IT DEV Specialist, Strong understanding of agile development methodologies.,51
+32,education,IT DEV Specialist, Adept at working with test-driven development and continuous integration.,53
+33,education,IT DEV Specialist, Skilled in working with microservices and containerization.,52
+34,education,IT DEV Specialist, Proficient in working with cloud-native technologies such as Kubernetes and Docker.,55
+35,education,IT DEV Specialist, Knowledgeable in data structure and algorithm.,55
+36,education,IT DEV Specialist, Experienced in working with Virtualization and Cloud Technologies.,53
+37,education,IT DEV Specialist, Strong understanding of IT infrastructure and network concepts.,54
+38,education,IT DEV Specialist, Skilled in working with NoSQL databases.,52
+39,education,IT DEV Specialist, Adept at working with machine learning and artificial intelligence technologies.,55
+40,education,IT DEV Specialist, Proficient in using AWS and Azure for cloud computing.,54
+41,education,IT DEV Specialist, Knowledgeable in load balancing and high availability concepts.,55
+42,education,IT DEV Specialist, Experienced in working with IT service management frameworks such as ITIL.,54
+43,education,IT DEV Specialist, Strong understanding of software engineering principles and best practices.,54
+44,education,IT DEV Specialist, Skilled in working with DevOps tools such as Ansible and Terraform.,51
+45,education,IT DEV Specialist, Adept at working with virtualization technologies such as VMware and Hyper-V.,55
+46,education,IT DEV Specialist, Proficient in working with different programming languages and technologies.,51
+47,education,IT DEV Specialist, Knowledgeable in software testing methodologies.,51
+49,education,Kayaking coach, Experienced kayaking instructor with a passion for the outdoors.,155
+50,education,Kayaking coach, Skilled in teaching both beginner and advanced paddling techniques.,152
+51,education,Kayaking coach, Knowledgeable in river rescue and safety procedures.,155
+52,education,Kayaking coach, Adept at leading group and individual kayaking excursions.,151
+53,education,Kayaking coach, Strong understanding of different types of kayaks and their appropriate uses.,153
+54,education,Kayaking coach, Proficient in using safety and rescue equipment.,151
+55,education,Kayaking coach, Experienced in whitewater kayaking and river navigation.,155
+56,education,Kayaking coach, Skilled in teaching proper kayak-handling and self-rescue techniques.,153
+57,education,Kayaking coach, Adept at providing personalized coaching to improve paddling skills.,152
+58,education,Kayaking coach, Strong understanding of weather,152
+59,education,Kayaking coach, Proficient in teaching proper kayak-fitting and outfitting.,155
+60,education,Kayaking coach, Experienced in working with both children and adult students.,155
+61,education,Kayaking coach, Skilled in leading multi-day kayaking trips.,152
+62,education,Kayaking coach, Adept at teaching basic and advance kayaking skills to all levels.,151
+63,education,Kayaking coach, Strong understanding of different paddling environments such as lakes,154
+64,education,Kayaking coach, Proficient in teaching kayak rolling and bracing techniques.,154
+65,education,Kayaking coach, Experienced in working with adaptive kayaking and teaching to people with disabilities.,153
+66,education,Kayaking coach, Skilled in teaching group management and leadership skills.,155
+67,education,Kayaking coach, Adept at providing equipment maintenance and repair instruction.,155
+68,education,Kayaking coach, Strong understanding of the principles of kayak design and dynamics.,151
+69,education,Kayaking coach, Proficient in teaching kayak safety and rescue techniques.,152
+70,education,Kayaking coach, Experienced in teaching and leading trips for youth groups.,153
+71,education,Kayaking coach, Skilled in working with people from a variety of backgrounds and skill levels.,152
+72,education,Kayaking coach, Adept at teaching proper paddling techniques to improve efficiency and speed.,151
+73,education,Kayaking coach, Strong understanding of the local environment and area regulations.,153
+74,education,Kayaking coach, Proficient in teaching basic navigation and trip planning skills.,151
+75,education,Kayaking coach, Experienced in working with both recreational and competitive kayakers.,151
+76,education,Kayaking coach, Skilled in teaching kayak-handling and control skills.,155
+77,education,Kayaking coach, Adept at working with a variety of different kayak types and models.,153
+78,education,Kayaking coach, Strong understanding of how to select and outfit a kayak for different environments.,153
+79,education,Kayaking coach, Proficient in teaching essential safety and survival skills.,151
+80,education,Kayaking coach, Experienced in working with people who have never been kayaking before.,151
+81,education,Kayaking coach, Skilled in instructing on river reading and hazard identification,151
+82,education,Kayaking coach, Adept at teaching basic and advance kayak maneuvers.,153
+83,education,Kayaking coach, Strong understanding of tides,154
+84,education,Kayaking coach, Proficient in teaching kayak-specific rescue and recovery techniques.,152
+85,education,Kayaking coach, Experienced in working with people of all ages and skill levels.,154
+86,education,Kayaking coach, Skilled in teaching river-specific paddling skills.,151
+87,education,Kayaking coach, Adept at teaching advanced strokes and maneuvers for increased control and speed.,154
+88,education,Kayaking coach, Strong understanding of the principles of kayak design and dynamics.,153
+89,education,Kayaking coach, Proficient in teaching proper kayak-fitting and outfitting.,151
+90,education,Kayaking coach, Experienced in working with advanced kayaking techniques.,155
+91,education,Kayaking coach, Skilled in providing personalized coaching to improve paddling skills.,151
+92,education,Kayaking coach, Adept at teaching the basics of kayaking,153
+93,education,Kayaking coach, Strong understanding of the different types of kayaking and their appropriate uses.,151
+94,education,Kayaking coach, Proficient in teaching paddling techniques for different skill levels and different types of water.,154
+95,education,Kayaking coach, Experienced in working with adaptive kayaking and teaching to people with disabilities.,155
+96,education,Kayaking coach, Skilled in working with people from a variety of backgrounds and skill,154
+99,education,Pure Math teacher, Experienced Pure Math teacher with strong analytical and problem-solving skills.,25
+100,education,Pure Math teacher, Skilled in teaching advanced mathematical concepts and theories.,25
+101,education,Pure Math teacher, Knowledgeable in Calculus,23
+102,education,Pure Math teacher, Adept at using technology and interactive resources to enhance student learning.,22
+103,education,Pure Math teacher, Strong understanding of mathematical principles and their applications in real-world problems.,25
+104,education,Pure Math teacher, Proficient in differentiating instruction and providing support to diverse learners.,23
+105,education,Pure Math teacher, Experienced in designing and implementing effective lesson plans and assessments.,24
+106,education,Pure Math teacher, Skilled in leading interactive discussions and group problem-solving activities.,21
+107,education,Pure Math teacher, Adept at providing individualized instruction to meet the needs of each student.,25
+108,education,Pure Math teacher, Strong understanding of mathematical concepts and how to teach them in an engaging manner.,25
+109,education,Pure Math teacher, Proficient in working with students of all levels,21
+110,education,Pure Math teacher, Experienced in creating and implementing math competitions and contests.,23
+111,education,Pure Math teacher, Skilled in leading extra-curricular activities related to math and science.,24
+112,education,Pure Math teacher, Adept at providing accurate and constructive feedback to students on their performance.,25
+113,education,Pure Math teacher, Strong understanding of current trends and best practices in math education.,22
+114,education,Pure Math teacher, Proficient in creating and using visual aids and multimedia resources to enhance instruction.,21
+115,education,Pure Math teacher, Experienced in working with students to develop their critical thinking and problem-solving skills.,24
+116,education,Pure Math teacher, Skilled in using formative and summative assessment techniques to evaluate student learning.,25
+117,education,Pure Math teacher, Adept at using technology to create interactive and engaging lessons.,22
+118,education,Pure Math teacher, Strong understanding of Common Core State Standards and other curriculum guidelines.,24
+119,education,Pure Math teacher, Proficient in using data to inform instruction and improve student outcomes.,25
+120,education,Pure Math teacher, Experienced in providing support to students who are struggling with math.,21
+121,education,Pure Math teacher, Skilled in leading math-related field trips and other hands-on learning activities.,24
+122,education,Pure Math teacher, Adept at working with other teachers to coordinate instruction and support student learning.,22
+123,education,Pure Math teacher, Strong understanding of learning styles and how to differentiate instruction to meet individual student needs.,22
+124,education,Pure Math teacher, Proficient in creating and using rubrics to evaluate student work.,23
+125,education,Pure Math teacher, Experienced in leading math-related clubs and activities.,22
+126,education,Pure Math teacher, Skilled in working with families to support student learning and achievement.,25
+127,education,Pure Math teacher, Adept at providing support to English Language Learners.,21
+128,education,Pure Math teacher, Strong understanding of how to use technology to enhance instruction and improve student learning.,22
+129,education,Pure Math teacher, Proficient in working with students to set learning goals and monitor progress.,25
+130,education,Pure Math teacher, Experienced in providing differentiated instruction to meet the needs of diverse learners.,25
+131,education,Pure Math teacher, Skilled in using data to inform instruction and identify areas for improvement.,25
+132,education,Pure Math teacher, Adept at leading small-group instruction and support for students.,25
+133,education,Pure Math teacher, Strong understanding of how to use technology to assess student understanding.,24
+134,education,Pure Math teacher, Proficient in using a variety of teaching strategies to meet the needs of different learners.,24
+135,education,Pure Math teacher, Experienced in providing individualized support to students who are struggling with math.,23
+136,education,Pure Math teacher, Skilled in providing students with opportunities to apply their learning to real-world problems.,22
+137,education,Pure Math teacher, Adept at working with parents and guardians to support student learning.,21
+138,education,Pure Math teacher, Strong understanding of the importance of fostering a positive learning environment.,21
+139,education,Pure Math teacher, Proficient in using formative and summative assessment to track student progress.,23
+140,education,Pure Math teacher, Experienced in creating engaging and interactive lesson to keep students engaged and motivated.,24
+141,education,Pure Math teacher, Skilled in providing opportunities for hands-on learning and experimentation.,23
+142,education,Pure Math teacher, Adept at using data to inform instruction and track student progress.,21

@@ -1,0 +1,27 @@
+service: aws-ofs-pricingestimator-microservice
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  stage: dev
+  region: eu-west-1
+  iamRoleStatements:
+    - ${file(predictionIAM.yaml):predictionIAM}
+
+functions:
+  PredictPrice:
+    handler: handler.PredictPrice
+    events:
+     - httpApi:
+         path: /predict
+         method: get
+    package:
+      include:
+        - requirements.txt
+
+custom:
+  pythonRequirements:
+    pipCmdExtraArgs:
+      - pip install scikit-learn
