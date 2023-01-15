@@ -7,20 +7,6 @@ const PricingEstimator = () => {
   const [inputValue, setInputValue] = useState('');
   const [items, setItems] = useState([]);
 
-  const axiosConf = {
-    headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
-        "Access-Control-Allow-Origin": "*",
-        'username': process.env.REACT_APP_username,
-        'password': process.env.REACT_APP_password
-    }
-    };
-
-  useEffect(() => {
-    axios.get('https://ai.ofs-platform.com/predictableFreelancingServices/40',axiosConf)
-      .then(response => setItems(response.data))
-  }, []);
-
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
