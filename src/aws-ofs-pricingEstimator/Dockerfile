@@ -14,4 +14,4 @@ RUN pip install --upgrade pip && \
 COPY . .
 
 # Run the command to start uvicorn
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]

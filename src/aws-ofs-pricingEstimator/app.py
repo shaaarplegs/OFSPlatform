@@ -9,7 +9,7 @@ class Prompt(BaseModel):
     description: str
 
 @app.post("/predict")
-def predict(body_dict: Prompt, 
+def predict(body_dict: Prompt,
     predictionKeyID: str = Header(None),
     predictionSecretAccess: str = Header(None)):
     s3_client =boto3.client('s3')
