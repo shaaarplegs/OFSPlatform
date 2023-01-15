@@ -1,0 +1,141 @@
+,_id,id,vertical,FS,description,price
+0,63c3dd9ea85c4e5eed251db7,0,education,IT DEV Specialist, Skilled in programming languages such as Java,54
+1,63c3dd9ea85c4e5eed251db8,1,education,IT DEV Specialist, Experienced in developing and maintaining complex software systems.,55
+2,63c3dd9ea85c4e5eed251db9,2,education,IT DEV Specialist, Knowledgeable in Agile development methodologies and DevOps practices.,53
+3,63c3dd9ea85c4e5eed251dba,3,education,IT DEV Specialist, Strong problem-solving skills and ability to work well in a team.,55
+4,63c3dd9ea85c4e5eed251dbb,4,education,IT DEV Specialist, Proficient in using development tools such as Git and JIRA.,52
+5,63c3dd9ea85c4e5eed251dbc,5,education,IT DEV Specialist, Well-versed in Object-Oriented Programming concepts and design patterns.,51
+6,63c3dd9ea85c4e5eed251dbd,6,education,IT DEV Specialist, Knowledgeable in database management and SQL.,53
+7,63c3dd9ea85c4e5eed251dbe,7,education,IT DEV Specialist, Adept at creating and implementing software testing plans.,55
+8,63c3dd9ea85c4e5eed251dbf,8,education,IT DEV Specialist, Strong analytical skills and ability to understand customer requirements.,54
+9,63c3dd9ea85c4e5eed251dc0,9,education,IT DEV Specialist, Proficient in JavaScript and front-end web development frameworks.,52
+10,63c3dd9ea85c4e5eed251dc1,10,education,IT DEV Specialist, Experienced in cloud computing technologies and deployment.,55
+11,63c3dd9ea85c4e5eed251dc2,11,education,IT DEV Specialist, Strong understanding of software development lifecycle and best practices.,55
+12,63c3dd9ea85c4e5eed251dc3,12,education,IT DEV Specialist, Able to work independently and manage projects from start to finish.,54
+13,63c3dd9ea85c4e5eed251dc4,13,education,IT DEV Specialist, Skilled in debugging and troubleshooting code.,51
+14,63c3dd9ea85c4e5eed251dc5,14,education,IT DEV Specialist, Proficient in working with cross-functional teams and collaborating with stakeholders.,54
+15,63c3dd9ea85c4e5eed251dc6,15,education,IT DEV Specialist, Adept at creating and maintaining technical documentation.,55
+16,63c3dd9ea85c4e5eed251dc7,16,education,IT DEV Specialist, Experienced in leading software development teams and mentoring junior developers.,55
+17,63c3dd9ea85c4e5eed251dc8,17,education,IT DEV Specialist, Strong understanding of software architecture and design principles.,53
+18,63c3dd9ea85c4e5eed251dc9,18,education,IT DEV Specialist, Proficient in C# and the .NET framework.,54
+19,63c3dd9ea85c4e5eed251dca,19,education,IT DEV Specialist, Able to work with a wide range of technologies and platforms.,54
+20,63c3dd9ea85c4e5eed251dcb,20,education,IT DEV Specialist, Strong analytical and problem-solving skills.,54
+21,63c3dd9ea85c4e5eed251dcc,21,education,IT DEV Specialist, Knowledgeable in Scrum and Kanban methodologies.,55
+22,63c3dd9ea85c4e5eed251dcd,22,education,IT DEV Specialist, Skilled in using version control systems like Git and SVN.,55
+23,63c3dd9ea85c4e5eed251dce,23,education,IT DEV Specialist, Experienced in working with Linux and Unix operating systems.,54
+24,63c3dd9ea85c4e5eed251dcf,24,education,IT DEV Specialist, Proficient in working with RESTful APIs and web services.,52
+25,63c3dd9ea85c4e5eed251dd0,25,education,IT DEV Specialist, Strong understanding of security principles and how to apply them in software development.,55
+26,63c3dd9ea85c4e5eed251dd1,26,education,IT DEV Specialist, Adept at identifying and addressing performance issues in software systems.,51
+27,63c3dd9ea85c4e5eed251dd2,27,education,IT DEV Specialist, Skilled in front-end development using HTML,51
+28,63c3dd9ea85c4e5eed251dd3,28,education,IT DEV Specialist, Knowledgeable in Big data and data mining concepts.,54
+29,63c3dd9ea85c4e5eed251dd4,29,education,IT DEV Specialist, Proficient in working with front-end development frameworks such as React and Angular.,52
+30,63c3dd9ea85c4e5eed251dd5,30,education,IT DEV Specialist, Experienced in developing mobile applications for iOS and Android.,53
+31,63c3dd9ea85c4e5eed251dd6,31,education,IT DEV Specialist, Strong understanding of agile development methodologies.,51
+32,63c3dd9ea85c4e5eed251dd7,32,education,IT DEV Specialist, Adept at working with test-driven development and continuous integration.,53
+33,63c3dd9ea85c4e5eed251dd8,33,education,IT DEV Specialist, Skilled in working with microservices and containerization.,52
+34,63c3dd9ea85c4e5eed251dd9,34,education,IT DEV Specialist, Proficient in working with cloud-native technologies such as Kubernetes and Docker.,55
+35,63c3dd9ea85c4e5eed251dda,35,education,IT DEV Specialist, Knowledgeable in data structure and algorithm.,55
+36,63c3dd9ea85c4e5eed251ddb,36,education,IT DEV Specialist, Experienced in working with Virtualization and Cloud Technologies.,53
+37,63c3dd9ea85c4e5eed251ddc,37,education,IT DEV Specialist, Strong understanding of IT infrastructure and network concepts.,54
+38,63c3dd9ea85c4e5eed251ddd,38,education,IT DEV Specialist, Skilled in working with NoSQL databases.,52
+39,63c3dd9ea85c4e5eed251dde,39,education,IT DEV Specialist, Adept at working with machine learning and artificial intelligence technologies.,55
+40,63c3dd9ea85c4e5eed251ddf,40,education,IT DEV Specialist, Proficient in using AWS and Azure for cloud computing.,54
+41,63c3dd9ea85c4e5eed251de0,41,education,IT DEV Specialist, Knowledgeable in load balancing and high availability concepts.,55
+42,63c3dd9ea85c4e5eed251de1,42,education,IT DEV Specialist, Experienced in working with IT service management frameworks such as ITIL.,54
+43,63c3dd9ea85c4e5eed251de2,43,education,IT DEV Specialist, Strong understanding of software engineering principles and best practices.,54
+44,63c3dd9ea85c4e5eed251de3,44,education,IT DEV Specialist, Skilled in working with DevOps tools such as Ansible and Terraform.,51
+45,63c3dd9ea85c4e5eed251de4,45,education,IT DEV Specialist, Adept at working with virtualization technologies such as VMware and Hyper-V.,55
+46,63c3dd9ea85c4e5eed251de5,46,education,IT DEV Specialist, Proficient in working with different programming languages and technologies.,51
+47,63c3dd9ea85c4e5eed251de6,47,education,IT DEV Specialist, Knowledgeable in software testing methodologies.,51
+48,63c3dd9ea85c4e5eed251de7,49,education,Kayaking coach, Experienced kayaking instructor with a passion for the outdoors.,155
+49,63c3dd9ea85c4e5eed251de8,50,education,Kayaking coach, Skilled in teaching both beginner and advanced paddling techniques.,152
+50,63c3dd9ea85c4e5eed251de9,51,education,Kayaking coach, Knowledgeable in river rescue and safety procedures.,155
+51,63c3dd9ea85c4e5eed251dea,52,education,Kayaking coach, Adept at leading group and individual kayaking excursions.,151
+52,63c3dd9ea85c4e5eed251deb,53,education,Kayaking coach, Strong understanding of different types of kayaks and their appropriate uses.,153
+53,63c3dd9ea85c4e5eed251dec,54,education,Kayaking coach, Proficient in using safety and rescue equipment.,151
+54,63c3dd9ea85c4e5eed251ded,55,education,Kayaking coach, Experienced in whitewater kayaking and river navigation.,155
+55,63c3dd9ea85c4e5eed251dee,56,education,Kayaking coach, Skilled in teaching proper kayak-handling and self-rescue techniques.,153
+56,63c3dd9ea85c4e5eed251def,57,education,Kayaking coach, Adept at providing personalized coaching to improve paddling skills.,152
+57,63c3dd9ea85c4e5eed251df0,58,education,Kayaking coach, Strong understanding of weather,152
+58,63c3dd9ea85c4e5eed251df1,59,education,Kayaking coach, Proficient in teaching proper kayak-fitting and outfitting.,155
+59,63c3dd9ea85c4e5eed251df2,60,education,Kayaking coach, Experienced in working with both children and adult students.,155
+60,63c3dd9ea85c4e5eed251df3,61,education,Kayaking coach, Skilled in leading multi-day kayaking trips.,152
+61,63c3dd9ea85c4e5eed251df4,62,education,Kayaking coach, Adept at teaching basic and advance kayaking skills to all levels.,151
+62,63c3dd9ea85c4e5eed251df5,63,education,Kayaking coach, Strong understanding of different paddling environments such as lakes,154
+63,63c3dd9ea85c4e5eed251df6,64,education,Kayaking coach, Proficient in teaching kayak rolling and bracing techniques.,154
+64,63c3dd9ea85c4e5eed251df7,65,education,Kayaking coach, Experienced in working with adaptive kayaking and teaching to people with disabilities.,153
+65,63c3dd9ea85c4e5eed251df8,66,education,Kayaking coach, Skilled in teaching group management and leadership skills.,155
+66,63c3dd9ea85c4e5eed251df9,67,education,Kayaking coach, Adept at providing equipment maintenance and repair instruction.,155
+67,63c3dd9ea85c4e5eed251dfa,68,education,Kayaking coach, Strong understanding of the principles of kayak design and dynamics.,151
+68,63c3dd9ea85c4e5eed251dfb,69,education,Kayaking coach, Proficient in teaching kayak safety and rescue techniques.,152
+69,63c3dd9ea85c4e5eed251dfc,70,education,Kayaking coach, Experienced in teaching and leading trips for youth groups.,153
+70,63c3dd9ea85c4e5eed251dfd,71,education,Kayaking coach, Skilled in working with people from a variety of backgrounds and skill levels.,152
+71,63c3dd9ea85c4e5eed251dfe,72,education,Kayaking coach, Adept at teaching proper paddling techniques to improve efficiency and speed.,151
+72,63c3dd9ea85c4e5eed251dff,73,education,Kayaking coach, Strong understanding of the local environment and area regulations.,153
+73,63c3dd9ea85c4e5eed251e00,74,education,Kayaking coach, Proficient in teaching basic navigation and trip planning skills.,151
+74,63c3dd9ea85c4e5eed251e01,75,education,Kayaking coach, Experienced in working with both recreational and competitive kayakers.,151
+75,63c3dd9ea85c4e5eed251e02,76,education,Kayaking coach, Skilled in teaching kayak-handling and control skills.,155
+76,63c3dd9ea85c4e5eed251e03,77,education,Kayaking coach, Adept at working with a variety of different kayak types and models.,153
+77,63c3dd9ea85c4e5eed251e04,78,education,Kayaking coach, Strong understanding of how to select and outfit a kayak for different environments.,153
+78,63c3dd9ea85c4e5eed251e05,79,education,Kayaking coach, Proficient in teaching essential safety and survival skills.,151
+79,63c3dd9ea85c4e5eed251e06,80,education,Kayaking coach, Experienced in working with people who have never been kayaking before.,151
+80,63c3dd9ea85c4e5eed251e07,81,education,Kayaking coach, Skilled in instructing on river reading and hazard identification,151
+81,63c3dd9ea85c4e5eed251e08,82,education,Kayaking coach, Adept at teaching basic and advance kayak maneuvers.,153
+82,63c3dd9ea85c4e5eed251e09,83,education,Kayaking coach, Strong understanding of tides,154
+83,63c3dd9ea85c4e5eed251e0a,84,education,Kayaking coach, Proficient in teaching kayak-specific rescue and recovery techniques.,152
+84,63c3dd9ea85c4e5eed251e0b,85,education,Kayaking coach, Experienced in working with people of all ages and skill levels.,154
+85,63c3dd9ea85c4e5eed251e0c,86,education,Kayaking coach, Skilled in teaching river-specific paddling skills.,151
+86,63c3dd9ea85c4e5eed251e0d,87,education,Kayaking coach, Adept at teaching advanced strokes and maneuvers for increased control and speed.,154
+87,63c3dd9ea85c4e5eed251e0e,88,education,Kayaking coach, Strong understanding of the principles of kayak design and dynamics.,153
+88,63c3dd9ea85c4e5eed251e0f,89,education,Kayaking coach, Proficient in teaching proper kayak-fitting and outfitting.,151
+89,63c3dd9ea85c4e5eed251e10,90,education,Kayaking coach, Experienced in working with advanced kayaking techniques.,155
+90,63c3dd9ea85c4e5eed251e11,91,education,Kayaking coach, Skilled in providing personalized coaching to improve paddling skills.,151
+91,63c3dd9ea85c4e5eed251e12,92,education,Kayaking coach, Adept at teaching the basics of kayaking,153
+92,63c3dd9ea85c4e5eed251e13,93,education,Kayaking coach, Strong understanding of the different types of kayaking and their appropriate uses.,151
+93,63c3dd9ea85c4e5eed251e14,94,education,Kayaking coach, Proficient in teaching paddling techniques for different skill levels and different types of water.,154
+94,63c3dd9ea85c4e5eed251e15,95,education,Kayaking coach, Experienced in working with adaptive kayaking and teaching to people with disabilities.,155
+95,63c3dd9ea85c4e5eed251e16,96,education,Kayaking coach, Skilled in working with people from a variety of backgrounds and skill,154
+96,63c3dd9ea85c4e5eed251e17,99,education,Pure Math teacher, Experienced Pure Math teacher with strong analytical and problem-solving skills.,25
+97,63c3dd9ea85c4e5eed251e18,100,education,Pure Math teacher, Skilled in teaching advanced mathematical concepts and theories.,25
+98,63c3dd9ea85c4e5eed251e19,101,education,Pure Math teacher, Knowledgeable in Calculus,23
+99,63c3dd9ea85c4e5eed251e1a,102,education,Pure Math teacher, Adept at using technology and interactive resources to enhance student learning.,22
+100,63c3dd9ea85c4e5eed251e1b,103,education,Pure Math teacher, Strong understanding of mathematical principles and their applications in real-world problems.,25
+101,63c3dd9ea85c4e5eed251e1c,104,education,Pure Math teacher, Proficient in differentiating instruction and providing support to diverse learners.,23
+102,63c3dd9ea85c4e5eed251e1d,105,education,Pure Math teacher, Experienced in designing and implementing effective lesson plans and assessments.,24
+103,63c3dd9ea85c4e5eed251e1e,106,education,Pure Math teacher, Skilled in leading interactive discussions and group problem-solving activities.,21
+104,63c3dd9ea85c4e5eed251e1f,107,education,Pure Math teacher, Adept at providing individualized instruction to meet the needs of each student.,25
+105,63c3dd9ea85c4e5eed251e20,108,education,Pure Math teacher, Strong understanding of mathematical concepts and how to teach them in an engaging manner.,25
+106,63c3dd9ea85c4e5eed251e21,109,education,Pure Math teacher, Proficient in working with students of all levels,21
+107,63c3dd9ea85c4e5eed251e22,110,education,Pure Math teacher, Experienced in creating and implementing math competitions and contests.,23
+108,63c3dd9ea85c4e5eed251e23,111,education,Pure Math teacher, Skilled in leading extra-curricular activities related to math and science.,24
+109,63c3dd9ea85c4e5eed251e24,112,education,Pure Math teacher, Adept at providing accurate and constructive feedback to students on their performance.,25
+110,63c3dd9ea85c4e5eed251e25,113,education,Pure Math teacher, Strong understanding of current trends and best practices in math education.,22
+111,63c3dd9ea85c4e5eed251e26,114,education,Pure Math teacher, Proficient in creating and using visual aids and multimedia resources to enhance instruction.,21
+112,63c3dd9ea85c4e5eed251e27,115,education,Pure Math teacher, Experienced in working with students to develop their critical thinking and problem-solving skills.,24
+113,63c3dd9ea85c4e5eed251e28,116,education,Pure Math teacher, Skilled in using formative and summative assessment techniques to evaluate student learning.,25
+114,63c3dd9ea85c4e5eed251e29,117,education,Pure Math teacher, Adept at using technology to create interactive and engaging lessons.,22
+115,63c3dd9ea85c4e5eed251e2a,118,education,Pure Math teacher, Strong understanding of Common Core State Standards and other curriculum guidelines.,24
+116,63c3dd9ea85c4e5eed251e2b,119,education,Pure Math teacher, Proficient in using data to inform instruction and improve student outcomes.,25
+117,63c3dd9ea85c4e5eed251e2c,120,education,Pure Math teacher, Experienced in providing support to students who are struggling with math.,21
+118,63c3dd9ea85c4e5eed251e2d,121,education,Pure Math teacher, Skilled in leading math-related field trips and other hands-on learning activities.,24
+119,63c3dd9ea85c4e5eed251e2e,122,education,Pure Math teacher, Adept at working with other teachers to coordinate instruction and support student learning.,22
+120,63c3dd9ea85c4e5eed251e2f,123,education,Pure Math teacher, Strong understanding of learning styles and how to differentiate instruction to meet individual student needs.,22
+121,63c3dd9ea85c4e5eed251e30,124,education,Pure Math teacher, Proficient in creating and using rubrics to evaluate student work.,23
+122,63c3dd9ea85c4e5eed251e31,125,education,Pure Math teacher, Experienced in leading math-related clubs and activities.,22
+123,63c3dd9ea85c4e5eed251e32,126,education,Pure Math teacher, Skilled in working with families to support student learning and achievement.,25
+124,63c3dd9ea85c4e5eed251e33,127,education,Pure Math teacher, Adept at providing support to English Language Learners.,21
+125,63c3dd9ea85c4e5eed251e34,128,education,Pure Math teacher, Strong understanding of how to use technology to enhance instruction and improve student learning.,22
+126,63c3dd9ea85c4e5eed251e35,129,education,Pure Math teacher, Proficient in working with students to set learning goals and monitor progress.,25
+127,63c3dd9ea85c4e5eed251e36,130,education,Pure Math teacher, Experienced in providing differentiated instruction to meet the needs of diverse learners.,25
+128,63c3dd9ea85c4e5eed251e37,131,education,Pure Math teacher, Skilled in using data to inform instruction and identify areas for improvement.,25
+129,63c3dd9ea85c4e5eed251e38,132,education,Pure Math teacher, Adept at leading small-group instruction and support for students.,25
+130,63c3dd9ea85c4e5eed251e39,133,education,Pure Math teacher, Strong understanding of how to use technology to assess student understanding.,24
+131,63c3dd9ea85c4e5eed251e3a,134,education,Pure Math teacher, Proficient in using a variety of teaching strategies to meet the needs of different learners.,24
+132,63c3dd9ea85c4e5eed251e3b,135,education,Pure Math teacher, Experienced in providing individualized support to students who are struggling with math.,23
+133,63c3dd9ea85c4e5eed251e3c,136,education,Pure Math teacher, Skilled in providing students with opportunities to apply their learning to real-world problems.,22
+134,63c3dd9ea85c4e5eed251e3d,137,education,Pure Math teacher, Adept at working with parents and guardians to support student learning.,21
+135,63c3dd9ea85c4e5eed251e3e,138,education,Pure Math teacher, Strong understanding of the importance of fostering a positive learning environment.,21
+136,63c3dd9ea85c4e5eed251e3f,139,education,Pure Math teacher, Proficient in using formative and summative assessment to track student progress.,23
+137,63c3dd9ea85c4e5eed251e40,140,education,Pure Math teacher, Experienced in creating engaging and interactive lesson to keep students engaged and motivated.,24
+138,63c3dd9ea85c4e5eed251e41,141,education,Pure Math teacher, Skilled in providing opportunities for hands-on learning and experimentation.,23
+139,63c3dd9ea85c4e5eed251e42,142,education,Pure Math teacher, Adept at using data to inform instruction and track student progress.,21
