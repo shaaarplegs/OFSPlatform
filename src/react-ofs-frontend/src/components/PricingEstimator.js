@@ -17,7 +17,7 @@ const PricingEstimator = () => {
     };
 
   useEffect(() => {
-    axios.get('http://ai.ofs-platform.com/predictableFreelancingServices/40',null,axiosConf)
+    axios.get('https://ai.ofs-platform.com/predictableFreelancingServices/40',axiosConf)
       .then(response => setItems(response.data))
   }, []);
 
@@ -40,7 +40,7 @@ const PricingEstimator = () => {
     }
     };
 
-    axios.post(`http://ai.ofs-platform.com/predict`, data, axiosConfig)
+    axios.post(`https://ai.ofs-platform.com/predict`, data, axiosConfig)
       .then( (r) => {
         setPrice(r.data.price)
         setPredicted(true)
