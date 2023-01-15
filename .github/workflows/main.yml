@@ -196,7 +196,7 @@ jobs:
   #   - run: npx cypress run
 
   Deploy_frontend_AWS:
-    needs: [e2e]
+    # needs: [e2e]
     name: Deploy react app the hosting bucket in AWS
     runs-on: ubuntu-latest
     defaults:
