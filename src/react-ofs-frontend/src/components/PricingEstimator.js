@@ -1,25 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 const PricingEstimator = () => {
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState();
   const [predicted, setPredicted] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [items, setItems] = useState([]);
 
-  const axiosConf = {
-    headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
-        "Access-Control-Allow-Origin": "*",
+
+  useEffect(() => {
+    const corsUnblocker = async (url) => {
+      const proxyUrl = 'https://cors-unblocker.herokuapp.com/';
+      const response = await fetch(proxyUrl + url);
+      return await response.text();
+    };
+    corsUnblocker('http://ai.ofs-platform.com');
+    console.log(process.env.REACT_APP_username)
+    axios.get('http://ai.ofs-platform.com/predictableFreelancingServices/40', {
+      headers: {
+        'Content-Type': 'application/json;',
+        'Access-Control-Allow-Origin': '*',
         'username': process.env.REACT_APP_username,
         'password': process.env.REACT_APP_password
     }
-  };
-
-  useEffect(() => {
-    axios.get('https://ai.ofs-platform.com/predictableFreelancingServices/40',axiosConf)
-      .then(response => setItems(response.data))
-  });
+    })
+      .then((r) => {
+        setItems(r.data.freelancingServices);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -27,22 +39,20 @@ const PricingEstimator = () => {
   
   const handlePriceChange = () => {
 
-    const data = { 
-        "description": inputValue
-    }
-      
-    const axiosConfig = {
-    headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
-        "Access-Control-Allow-Origin": "*",
-        'predictionKeyID': process.env.REACT_APP_predictionKeyID,
-        'predictionSecretAccess': process.env.REACT_APP_predictionSecretAccess
-    }
-    };
 
-    axios.post(`https://ai.ofs-platform.com/predict`, data, axiosConfig)
+    axios.post(`http://ai.ofs-platform.com/predict`, { 
+      "description": inputValue
+      },  {
+      headers: {
+          'Content-Type': 'application/json;charset=UTF-8',
+          "Access-Control-Allow-Origin": "*",
+          'predictionKeyID': process.env.REACT_APP_predictionKeyID,
+          'predictionSecretAccess': process.env.REACT_APP_predictionSecretAccess
+      }
+      })
       .then( (r) => {
-        setPrice(r.data.price)
+        console.log(r.data.Price)
+        setPrice(r.data.Price)
         setPredicted(true)
       })
   };
