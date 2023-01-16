@@ -6,194 +6,194 @@ on:
       - main
 
 jobs:
-  # StaticCodeAnalysis_Sonarcloud:
-  #   name: SonarCloud
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #       with:
-  #         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-  #     - name: SonarCloud Scan
-  #       uses: SonarSource/sonarcloud-github-action@master
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-  #         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  # Vunerabilities_Check:
-  #   name: Vunerabilities Check of all microservices
-  #   runs-on: ubuntu-latest
-  #   env:
-  #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: install Snyk CLI
-  #     run: npm install -g snyk
-  #   - name: cognito configs security check
-  #     working-directory: src/aws-ofs-cognito-setup
-  #     run: snyk test
-  #   - name: Verticals microservice security check
-  #     working-directory: src/aws-ofs-verticals-microservice
-  #     run: snyk test
-  #   - name: Freelancing microservice security check
-  #     working-directory: src/aws-ofs-freelancing-microservice
-  #     run: snyk test
-  #   - name: Status microservice security check
-  #     working-directory: src/aws-ofs-status-microservice
-  #     run: snyk test
+  StaticCodeAnalysis_Sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  Vunerabilities_Check:
+    name: Vunerabilities Check of all microservices
+    runs-on: ubuntu-latest
+    env:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: install Snyk CLI
+      run: npm install -g snyk
+    - name: cognito configs security check
+      working-directory: src/aws-ofs-cognito-setup
+      run: snyk test
+    - name: Verticals microservice security check
+      working-directory: src/aws-ofs-verticals-microservice
+      run: snyk test
+    - name: Freelancing microservice security check
+      working-directory: src/aws-ofs-freelancing-microservice
+      run: snyk test
+    - name: Status microservice security check
+      working-directory: src/aws-ofs-status-microservice
+      run: snyk test
 
-  # Build_Cognito_assets:
-  #   needs: [Vunerabilities_Check,StaticCodeAnalysis_Sonarcloud]
-  #   name: Setup cognito configs
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: src/aws-ofs-cognito-setup
-  #   strategy:
-  #     matrix:
-  #       node-version: [16.x]
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: using NodeJS
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #   - run: npm ci
-  #   - name: Install Serverless Framework
-  #     run: npm install -g serverless
-  #   - name: Serverless AWS authentication
-  #     run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #   - name: Deploy verticals microservice to AWS
-  #     run: serverless deploy
-
-
-  # Build_Verticals_Microservice:
-  #   needs:  [Vunerabilities_Check,StaticCodeAnalysis_Sonarcloud]
-  #   name: Verticals microservice deployment
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: src/aws-ofs-verticals-microservice
-  #   strategy:
-  #     matrix:
-  #       node-version: [16.x]
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: using NodeJS
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #   - run: npm ci
-  #   - name: Run unit tests
-  #     run: npm test
-  #   - name: Install Serverless Framework
-  #     run: npm install -g serverless
-  #   - name: Serverless AWS authentication
-  #     run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #   - name: Deploy verticals microservice to AWS
-  #     run: serverless deploy
+  Build_Cognito_assets:
+    needs: [Vunerabilities_Check,StaticCodeAnalysis_Sonarcloud]
+    name: Setup cognito configs
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/aws-ofs-cognito-setup
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: using NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Install Serverless Framework
+      run: npm install -g serverless
+    - name: Serverless AWS authentication
+      run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Deploy verticals microservice to AWS
+      run: serverless deploy
 
 
-  # Build_Freelancing_Microservice:
-  #   needs:  [Vunerabilities_Check,StaticCodeAnalysis_Sonarcloud]
-  #   name: freelancing microservice deployment
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: src/aws-ofs-freelancing-microservice
-  #   strategy:
-  #     matrix:
-  #       node-version: [16.x]
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: Use Node.js ${{ matrix.node-version }}
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #   - run: npm ci
-  #   - name: Run unit tests
-  #     run: npm test
-  #   - name: Install Serverless Framework
-  #     run: npm install -g serverless
-  #   - name: Serverless AWS authentication
-  #     run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #   - name: Deploy verticals microservice to AWS
-  #     run: serverless deploy
-
-  # Build_Status_Microservice:
-  #   needs:  [Vunerabilities_Check,StaticCodeAnalysis_Sonarcloud]
-  #   name: freelancing status microservice deployment
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: src/aws-ofs-status-microservice
-  #   strategy:
-  #     matrix:
-  #       node-version: [16.x]
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: Use Node.js ${{ matrix.node-version }}
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #   - run: npm ci
-  #   - name: Run unit tests
-  #     run: npm test
-  #   - name: Install Serverless Framework
-  #     run: npm install -g serverless
-  #   - name: Serverless AWS authentication
-  #     run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #   - name: Deploy verticals microservice to AWS
-  #     run: serverless deploy
-
-  # Integration_test:
-  #   needs: [Build_Verticals_Microservice, Build_Freelancing_Microservice, Build_Status_Microservice,Build_Cognito_assets]
-  #   name: Integration test microservice deployment
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: src/IntegrationTest
-  #   strategy:
-  #     matrix:
-  #       python-version: ['2.x', '3.x']
-  #   steps:
-  #   - name: Set up Python
-  #     uses: actions/checkout@v2
-  #     with:
-  #       python-version: ${{ matrix.python-version }}
-  #       architecture: x64
-  #   - name: Install dependencies
-  #     run: |
-  #       python -m pip install --upgrade pip
-  #       pip install pytest
-  #       if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-  #   - name: Test with pytest
-  #     run: |
-  #       pytest
-  #     env:
-  #       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  Build_Verticals_Microservice:
+    needs:  [Vunerabilities_Check,StaticCodeAnalysis_Sonarcloud]
+    name: Verticals microservice deployment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/aws-ofs-verticals-microservice
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: using NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Run unit tests
+      run: npm test
+    - name: Install Serverless Framework
+      run: npm install -g serverless
+    - name: Serverless AWS authentication
+      run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Deploy verticals microservice to AWS
+      run: serverless deploy
 
 
-  # e2e:
-  #   needs: [Integration_test]
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: src/react-ofs-frontend
-  #   strategy:
-  #     matrix:
-  #       node-version: [16.x]
-  #   steps:
+  Build_Freelancing_Microservice:
+    needs:  [Vunerabilities_Check,StaticCodeAnalysis_Sonarcloud]
+    name: freelancing microservice deployment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/aws-ofs-freelancing-microservice
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Run unit tests
+      run: npm test
+    - name: Install Serverless Framework
+      run: npm install -g serverless
+    - name: Serverless AWS authentication
+      run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Deploy verticals microservice to AWS
+      run: serverless deploy
 
-  #   - uses: actions/checkout@v3
-  #   - name: Use Node.js ${{ matrix.node-version }}
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #   - run: npm i
-  #   - run: nohup npm start &
-  #   - run: |
-  #       echo '${{ secrets.CYPRESS_ENV_CI }}' > cypress.env.json
-  #   - run: npx cypress run
+  Build_Status_Microservice:
+    needs:  [Vunerabilities_Check,StaticCodeAnalysis_Sonarcloud]
+    name: freelancing status microservice deployment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/aws-ofs-status-microservice
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Run unit tests
+      run: npm test
+    - name: Install Serverless Framework
+      run: npm install -g serverless
+    - name: Serverless AWS authentication
+      run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Deploy verticals microservice to AWS
+      run: serverless deploy
+
+  Integration_test:
+    needs: [Build_Verticals_Microservice, Build_Freelancing_Microservice, Build_Status_Microservice,Build_Cognito_assets]
+    name: Integration test microservice deployment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/IntegrationTest
+    strategy:
+      matrix:
+        python-version: ['2.x', '3.x']
+    steps:
+    - name: Set up Python
+      uses: actions/checkout@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+        architecture: x64
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Test with pytest
+      run: |
+        pytest
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+
+  e2e:
+    needs: [Integration_test]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/react-ofs-frontend
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i
+    - run: nohup npm start &
+    - run: |
+        echo '${{ secrets.CYPRESS_ENV_CI }}' > cypress.env.json
+    - run: npx cypress run
 
   Deploy_frontend_AWS:
     # needs: [e2e]
