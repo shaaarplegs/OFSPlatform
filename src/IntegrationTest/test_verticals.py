@@ -25,5 +25,7 @@ def getVerticals():
 
 
 def test_retrieveVerticals():
+
     VerticalsDic = getVerticals()
-    assert len(VerticalsDic['verticals']) == 0
+    # the test require atleast one vertical created
+    assert len(VerticalsDic['verticals']) > 0
