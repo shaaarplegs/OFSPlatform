@@ -1,0 +1,16 @@
+service: aws-ofs-proxy
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: eu-west-1
+
+functions:
+  predictor:
+    handler: src/handlers/predictor.handler
+    events: 
+     - httpApi:
+         path: /predictor
+         method: post
