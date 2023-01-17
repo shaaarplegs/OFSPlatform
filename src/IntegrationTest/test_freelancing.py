@@ -23,7 +23,7 @@ def getApiGatewayGeneratedID():
 def getFreelancingServices():
     return requests.get('https://{generatedId}.execute-api.eu-west-1.amazonaws.com/fs'.format(generatedId=getApiGatewayGeneratedID())).json()
 
-
 def test_retrieveFS():
     fsDic = getFreelancingServices()
-    assert len(fsDic['freelancingservices']) == 0
+    # test require atleast one fs created
+    assert len(fsDic['freelancingservices']) > 0
