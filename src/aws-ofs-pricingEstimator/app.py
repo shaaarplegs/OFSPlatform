@@ -10,19 +10,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 import s3fs
 from pickle import dump
 import os
-from fastapi.middleware.cors import CORSMiddleware
-
-
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 class Prompt(BaseModel):
     description: str

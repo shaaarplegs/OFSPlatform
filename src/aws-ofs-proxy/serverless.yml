@@ -6,7 +6,10 @@ provider:
   runtime: nodejs16.x
   stage: dev
   region: eu-west-1
-
+  httpApi:
+    cors: true
+  iamRoleStatements:
+    - ${file(IAM/SecretsManagerIAM.yaml):SecretsManagerIAM}
 functions:
   predictor:
     handler: src/handlers/predictor.handler
@@ -14,3 +17,17 @@ functions:
      - httpApi:
          path: /predictor
          method: post
+
+  predictableFreelancingServices:
+    handler: src/handlers/predictableFreelancingServices.handler
+    events: 
+     - httpApi:
+         path: /predictableFreelancingServices/{threshold}
+         method: get
+
+  updateModel:
+    handler: src/handlers/updateModel.handler
+    events: 
+     - httpApi:
+         path: /updateModel/{threshold}
+         method: get

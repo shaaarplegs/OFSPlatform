@@ -3,10 +3,9 @@ import axios from 'axios';
 import {
     SecretsManagerClient,
     GetSecretValueCommand,
-  } from "@aws-sdk/client-secrets-manager";
+} from "@aws-sdk/client-secrets-manager";
 
-
-async function predictor(event) {
+async function predictableFreelancingServices(event) {
     // Getting keys from secrets manager
     const secret_name = "predictionSecret";
     const client = new SecretsManagerClient({
@@ -27,32 +26,32 @@ async function predictor(event) {
     // https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
     throw error;
     }
-
     const secret = response.SecretString;
-    let price = 0;
-    const {description} = JSON.parse(event.body)
 
-    await axios.post(`http://ai-estimator.link/predict`, { 
-        "description": description
-        },  {
+    const {threshold} = event.pathParameters;
+    let trainableFsList = [];
+
+    await axios.get(`http://ai-estimator.link/predictableFreelancingServices/${threshold}`, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
-            'predictionKeyID': JSON.parse(secret).predictionKeyID,
-            'predictionSecretAccess': JSON.parse(secret).predictionSecretAccess
+            "Access-Control-Allow-Origin": "*",
+            'username': JSON.parse(secret).username,
+            'password': JSON.parse(secret).password
         }
         })
         .then( (r) => {
         console.log(r.data)
-        price = r.data.Price
+        trainableFsList = r.data.freelancingServices
         })
         return {
             statusCode: 200,
             headers: {
-            'content-type': 'application/json',
+                'content-type': 'application/json',
             },
-            body: JSON.stringify({ "Message":"Price predicted","price": price })
+            body: JSON.stringify({ "Message":"possible predictable freelancers analyzed","freelancingServices": trainableFsList })
         }
+
 
 };
   
-export const handler = predictor;
+export const handler = predictableFreelancingServices;
