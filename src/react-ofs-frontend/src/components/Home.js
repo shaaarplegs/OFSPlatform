@@ -2,7 +2,7 @@ import React from 'react';
 import bgImg from './home.png'
 import logo from '../logo.png'
 import profileImg from '../me.jpeg'
-
+/*eslint-disable */
 const Home = () => {
     return (
       <div>

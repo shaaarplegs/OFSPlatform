@@ -43,7 +43,6 @@ const FreelancingServices = () => {
         const { scheduledTime } = res.data.status;
         console.log(scheduledTime);
 
-        const currentTime = new Date();
         const day= new Date().getDay() //return 0 to 6
         let weekday= ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         const scheduledTimeDays = scheduledTime.Days;
