@@ -14,5 +14,5 @@ it("Click on the registeration button & check if it is possible to register as f
 it("Click on the registeration button of freelancer", ()=> {
     cy.visit('http://localhost:3000/')
     cy.get('[style="opacity: 1; order: 2;"]').click()
-    cy.get(':nth-child(1) > .ant-btn').click()
+    cy.get(':nth-child(1) > div > .ant-btn').click({ multiple: true })
 })

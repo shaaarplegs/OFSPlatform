@@ -13,7 +13,7 @@ it("Go to the login page", ()=> {
 })
 
 
-it("Go to the login page", ()=> {
+it("Login with existing user and check personal information", ()=> {
     // local frontend version in vm machine / local machine
     cy.visit('http://localhost:3000/')
     cy.get('[style="opacity: 1; order: 1;"]').click()
