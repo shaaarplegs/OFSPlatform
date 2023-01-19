@@ -10,6 +10,7 @@ import { UrlHasToken, getToken,ParseTokenInfo,ConfirmFreelancerRegisterationThun
 import LayoutVisitor from "./components/Layout/LayoutVisitor";
 import LayoutSS from "./components/Layout/LayoutSS";
 import LayoutFS from "./components/Layout/LayoutFS";
+import PrivacyPolicy from "./components/Layout/PrivacyPolicy";
 
 const Router = () => {
 
@@ -65,6 +66,7 @@ const Router = () => {
                 )
             )   
         }
+
     </Routes>
   );
 };

@@ -8,6 +8,8 @@ async function createFS(event) {
   const {description} = JSON.parse(event.body)
   const {price} = JSON.parse(event.body)
   const {scheduledTime} = JSON.parse(event.body)
+  const {phone_number} = JSON.parse(event.body)
+  const {email} = JSON.parse(event.body)
 
   console.log('Creating freelancing object...')
   const newFS = createFreelancingObject({
@@ -15,7 +17,9 @@ async function createFS(event) {
       name,
       city,
       description,
-      price
+      price,
+      phone_number,
+      email
   })
   
   await putToDynamoDB(newFS).promise();

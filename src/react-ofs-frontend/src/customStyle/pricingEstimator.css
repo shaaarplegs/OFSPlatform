@@ -23,6 +23,11 @@ input {
     text-align: center;
 }
 
+.pricing-estimatorInput {
+    width: 60%;
+    height: 150px;
+}
+
 button {
     padding: 10px 20px;
     font-size: 18px;

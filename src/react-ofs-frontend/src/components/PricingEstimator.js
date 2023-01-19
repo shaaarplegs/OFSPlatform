@@ -36,6 +36,8 @@ const PricingEstimator = () => {
 
   return (
     <div className="pricing-estimator">
+      <h3 style={{color:'blue'}}>The service support estimating the prices of the following services:</h3>
+      
       <ul className="pricing-estimator__list">
         {items.map((item, index) => (
           <li key={index} className="pricing-estimator__list-item">{item}</li>
@@ -43,7 +45,7 @@ const PricingEstimator = () => {
       </ul>
       <br />
       <input
-        className="pricing-estimator__input"
+        className="pricing-estimator__input pricing-estimatorInput"
         type="string"
         value={inputValue}
         onChange={handleInputChange}
@@ -54,12 +56,25 @@ const PricingEstimator = () => {
       <button className="pricing-estimator__button" onClick={handlePriceChange}>Get Price</button>
       <br />
       <br />
-
       {
         predicted === true && (
-            <h3 className="pricing-estimator__price">Price: {price} Rial Omani</h3>
+            <h3 className="pricing-estimator__price">Estimated Price: {price} Rial Omani</h3>
         ) 
       }
+      <br />
+      <br />
+      <br />
+      <br />
+
+
+<div className="paragraph-section" style={{ textAlign: 'center', marginBottom: '5%',  borderRadius: '25px', width: '60%'}}>
+            <h3 style={{color:'blue'}}>How does this work ?</h3>
+            <p style={{ fontSize: '18px', color: 'grey', lineHeight: '30px' }}>
+            We use a machine learning model to predict the price of the service you are looking for.
+            The model consistently learns from the data of the services that are already available on our platform.
+            This means that you get an idea about the price of the service you are looking for without having to analysize the market beforehand.
+            </p>    
+        </div>
     </div>
   );
 };

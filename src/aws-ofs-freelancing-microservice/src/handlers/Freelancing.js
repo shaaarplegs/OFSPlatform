@@ -38,7 +38,9 @@ export const createFreelancingObject = (props) => {
         name:props.name,
         city:props.city,
         description:props.description,
-        price:props.price
+        price:props.price,
+        phone_number:props.phone_number,
+        email:props.email
     }
     return jsonObject;
 }

@@ -10,6 +10,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 import s3fs
 from pickle import dump
 import os
+import uuid
+
 
 app = FastAPI()
 
@@ -124,3 +126,34 @@ def updateModel(
 
     client.close()
     return { 'message': 'Model updated successfully' }
+
+
+class FSInput(BaseModel):
+    vertical: str
+    FS: str
+    description: str
+    price: int
+
+@app.post("/updateDB")
+def updateDB(FSinput: FSInput,
+    username: str = Header(None),
+    password: str = Header(None)
+):
+    client = pymongo.MongoClient('mongodb+srv://{user}:{password}@aws-ofs-pricingdb.2nunmyc.mongodb.net'.format(user=username, password=password))
+    ##Specify the database to be used
+    db = client.pricing
+
+    ##Specify the collection to be used
+    col = db.pricing
+
+    to_insert = {
+        "id":str(uuid.uuid4()),
+        "vertical":FSinput.vertical,
+        "FS":FSinput.FS,
+        "description":FSinput.description,
+        "price":FSinput.price
+    }
+    print(to_insert)
+
+    col.insert_one(to_insert)
+    client.close()

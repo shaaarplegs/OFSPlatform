@@ -7,23 +7,23 @@ const PrivacyPolicy = () =>  {
 
 OFS (hereinafter referred to as "Company," "we," "us," or "our") respects the privacy of our users (hereinafter referred to as "you" or "your") and is committed to protecting the personal information that you share with us. This Privacy Policy (the "Policy") describes the types of personal information we collect, how we use it, with whom we share it, and the choices you have regarding our use of your personal information.
 
-<h3>Personal Information Collection and Use</h3>
+<br></br> <br></br><br></br> <br></br><h3>Personal Information Collection and Use</h3>
 
 We collect personal information from you when you create an account and use the OFS platform. The types of personal information we collect include your name, address, phone number, and any other information that you choose to provide. We may also collect certain information automatically, such as your IP address, browser type, and operating system.
 
 The personal information you provide is used to identity where the freelancing services are and to contact you when a service seeker is interested in your services. Your name and address will also be displayed to other service seekers when they are searching for freelancing services that you offer.
 
-<h3>Security of Personal Information</h3>
+<br></br> <br></br><br></br> <br></br><h3>Security of Personal Information</h3>
 
 We take the security of your personal information seriously. Any personal information you provide to us is stored in Cognito, which is a secure cloud service provider. The security of your personal information is the responsibility of Cognito, and we rely on their security measures to protect your information.
 
 However, no method of transmission over the Internet, or method of electronic storage, is 100% secure. Therefore, while we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.
 
-<h3>Processing of Personal Information</h3>
+<br></br> <br></br><br></br> <br></br> <h3>Processing of Personal Information</h3>
 
 When you use the OFS platform, your personal information, such as your name and address, may be used to process freelancing requests and to determine insights about the services trends and similar insights analyses actions. We will not use your personal information for any other purpose, and we will not perform any machine learning actions on your personal information.
 
-<h3>Your Choices</h3>
+<br></br> <br></br><br></br> <br></br><h3>Your Choices</h3>
 
 You have the right to access, correct, delete, or object to the processing of your personal information. You can also request that your personal information be transferred to another company. If you would like to exercise any of these rights, please contact us at <span>mohammed.al.harbi@insify.io</span>.
 
@@ -31,7 +31,7 @@ Changes to this Privacy Policy
 
 We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
 
-<h3>Contact Us</h3>
+<br></br> <br></br><br></br> <br></br><h3>Contact Us</h3>
 
 If you have any questions or concerns about this Privacy Policy, please contact us at <span>mohammed.al.harbi@insify.io</span>.
 
