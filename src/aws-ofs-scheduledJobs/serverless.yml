@@ -1,0 +1,21 @@
+service: aws-ofs-scheduledJobs
+
+provider:
+  name: aws
+  runtime: python3.9
+  stage: dev
+  region: eu-west-1
+
+functions:
+  updateModel:
+    handler: updateModel.updateModel
+    events:
+      - schedule: rate(1 minute)
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    usePipfile: true
+

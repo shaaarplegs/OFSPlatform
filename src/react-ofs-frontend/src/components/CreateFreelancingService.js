@@ -1,10 +1,11 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import { Form, Select, Input, Button,Checkbox } from 'antd';
-
+/*eslint-disable */
 const CreateFreelancingService = () => {
   const [verticals, setVerticals] = useState([]);
   const [uploaded, setUploaded] = useState(null);
+  const [uploadedML, setUploadedML] = useState(null);
   const [formData, setFormData] = useState({
     vertical_id: '',
     name: '',
@@ -60,6 +61,21 @@ const CreateFreelancingService = () => {
         setUploaded(true)
       })
       .catch(err => console.log(err));
+
+      // update machine learning database
+      const mlData = {
+        "vertical": formData.vertical_id,
+        "FS": formData.name,
+        "description":  formData.description,
+        "price":  formData.price,
+      }
+      axios.post(`https://${process.env.REACT_APP_API_Proxy}/updateDB`, mlData)
+      .then((r) => {
+        console.log(r)
+        setUploadedML(true)
+      })
+      .catch(err => console.log(err));
+
     console.log(formData)
   }
 
@@ -114,6 +130,14 @@ const CreateFreelancingService = () => {
           uploaded ? true && (
             <div>
              <h3 style={{color:'blue'}}>Your service has been shared successfully!</h3>
+            </div>
+          ) : false
+      }
+
+    {
+          uploadedML ? true && (
+            <div>
+             <h3 style={{color:'blue'}}>Your freelancing service information will be used to enchance our pricing estimator service.</h3>
             </div>
           ) : false
       }

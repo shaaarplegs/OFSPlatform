@@ -34,7 +34,6 @@ async function predictableFreelancingServices(event) {
     await axios.get(`http://ai-estimator.link/predictableFreelancingServices/${threshold}`, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
-            "Access-Control-Allow-Origin": "*",
             'username': JSON.parse(secret).username,
             'password': JSON.parse(secret).password
         }

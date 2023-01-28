@@ -31,3 +31,10 @@ functions:
      - httpApi:
          path: /updateModel/{threshold}
          method: get
+
+  updateDB:
+    handler: src/handlers/updateDB.handler
+    events: 
+     - httpApi:
+         path: /updateDB
+         method: post

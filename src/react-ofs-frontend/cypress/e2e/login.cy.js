@@ -3,7 +3,7 @@
 
 it("Check if login button exists in the landing page", ()=> {
     cy.visit('http://localhost:3000/')
-    cy.get('[style="opacity: 1; order: 1;"] > .ant-menu-title-content') == 'Login'
+    cy.get('[style="opacity: 1; order: 1;"] > .ant-menu-title-content') === 'Login'
 })
 
 
@@ -24,6 +24,6 @@ it("Login with existing user and check personal information", ()=> {
     })
     // after login, the user should be redirected to the home page
     cy.origin('https://ofs-platform.com/', () => {
-        cy.get('span[class="ant-breadcrumb-link"]') == 'Freelancer / Welcome, Mohammed Saleh Said Salem Alharbi'
+        cy.get('span[class="ant-breadcrumb-link"]') === 'Freelancer / Welcome, Mohammed Saleh Said Salem Alharbi'
     })
 })

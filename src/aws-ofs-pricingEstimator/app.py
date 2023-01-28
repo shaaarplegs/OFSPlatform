@@ -94,7 +94,7 @@ def updateModel(
     trainableFS = fsCount[fsCount['count'] > threshold]['FS'].tolist()
 
     df = df[df['FS'].isin(trainableFS)][['description','price']]
-    df
+
     # Vectorize the descriptions using CountVectorizer
     vectorizer = CountVectorizer()
     descriptions_vectors = vectorizer.fit_transform(df.description)

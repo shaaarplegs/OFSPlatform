@@ -11,7 +11,7 @@ OFS (hereinafter referred to as "Company," "we," "us," or "our") respects the pr
 
 We collect personal information from you when you create an account and use the OFS platform. The types of personal information we collect include your name, address, phone number, and any other information that you choose to provide. We may also collect certain information automatically, such as your IP address, browser type, and operating system.
 
-The personal information you provide is used to identity where the freelancing services are and to contact you when a service seeker is interested in your services. Your name and address will also be displayed to other service seekers when they are searching for freelancing services that you offer.
+The personal information you provide is used to identity where the freelancing services are and to contact you when a service seeker is interested in your services. Your email and phone number will also be displayed to other service seekers when they are searching for freelancing services that you offer.
 
 <br></br> <br></br><br></br> <br></br><h3>Security of Personal Information</h3>
 
