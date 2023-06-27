@@ -1,9 +1,9 @@
 {
   "type": "module",
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.223.0",
+    "@aws-sdk/client-dynamodb": "^3.347.1",
     "artillery-plugin-aws-sigv4": "^0.0.5",
-    "aws-sdk": "^2.1254.0",
+    "aws-sdk": "^2.1354.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
