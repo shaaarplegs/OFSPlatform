@@ -4,7 +4,7 @@ import pymongo
 import sys
 import pandas as pd
 
-client = pymongo.MongoClient('mongodb+srv://HarbiTechMoe_MDB:8JKOWD8Q6V1Of0Xg@aws-ofs-pricingdb.2nunmyc.mongodb.net')
+client = pymongo.MongoClient('#secret')
 
 ##Specify the database to be used
 db = client.pricing
